@@ -148,7 +148,7 @@
     transform: rotate(0deg);
   }
   100%{
-    transform: rotate(3600deg); /* Rotate 10 times */
+    transform: rotate(360deg); /* Rotate 10 times */
   }
 }
 
