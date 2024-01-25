@@ -290,7 +290,9 @@ const FullLayout = () => {
            <img src={ProfileAvatar} alt="avtar" 
            style={{
            height: "40px",
-           width: "40px",}}/>
+           width: "40px",
+          cursor:"pointer"
+          }}/>
            </Dropdown>
          </div>
          {isMobile ? (
