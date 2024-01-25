@@ -1,0 +1,123 @@
+.ant-layout {
+    min-height: 100vh !important;
+    background-color: #1a0d41 !important;
+    font-family: poppins !important;
+}
+
+.demo-logo-vertical {
+    height: 63px;
+    margin: none;
+    background-color: #1a0d41 !important;
+    text-align: center;
+    transition: 1s ease-in-out;
+
+}
+
+.ant-layout-sider {
+    background-color: #140836 !important;
+}
+
+.ant-layout-content {
+    background-color: transparent !important;
+}
+
+.ant-menu {
+    margin-top: 20px !important;
+}
+
+.ant-menu .ant-menu-sub {
+    margin-top: 0px !important;
+}
+
+.ant-dropdown-menu {
+    background-color: #21114d !important;
+}
+
+.ant-layout-header {
+    background-color: #140836 !important;
+    color: white;
+}
+
+.ant-layout-header h6 {
+    line-height: 35px;
+    margin-top: 4px;
+}
+
+.ant-layout-header p {
+    line-height: 10px;
+}
+
+.Link {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .ant-layout-sider {
+        display: none;
+    }
+
+    .ant-layout-sider-collapsed {
+        display: block !important;
+    }
+}
+
+
+/* content css*/
+.rightSection {
+    border-radius: 10px;
+    background-color: #2a1758;
+    padding: 12px 20px !important;
+}
+.transaction-box {
+    border-radius: 10px;
+    background-color: #201048;
+    padding: 40px 30px 10px;
+  }
+.transaction-box .top-filter {
+    gap: 20px;
+    justify-content: space-between;
+  }
+.transaction-box .single-filter {
+    width: 100%;
+    align-items: flex-end;
+  }
+.transaction-box .single-filter p {
+    margin-bottom: 5px;
+  }
+.transaction-box .nice-select {
+    background-color: #251351;
+    border: 1px solid #3e2973;
+  }
+ .transaction-box .table thead tr {
+    background-color: #3a2372;
+    padding: 20px 30px;
+  }
+.transaction-box .table thead tr th {
+    color:white;
+  }
+ .transaction-box .table tr {
+    border-bottom: 1px solid #432f7a;
+    background-color: #1d1041;
+  }
+  .transaction-box .table tr th {
+    padding: 15px 30px;
+  }
+
+/* filter btn */
+.filter-btn {
+    padding: 14px 30px;
+    font-weight: 600;
+    text-align: center;
+    color:white;
+    transition: 0.3s;
+    border-radius: 10px;
+    background-color: #078d07;
+    border: 2px solid #068c06;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .filter-btn:hover {
+    background: #591db4;
+    border-color: transparent;
+  }

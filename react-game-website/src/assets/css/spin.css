@@ -1,0 +1,40 @@
+.spin-select {
+    background-color: #412779;
+    border: 1px solid #412779;
+    float: initial;
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    color: white;
+    width: 100%;
+    font-family: poppins;
+    border-radius: 9px;
+  }
+  .spin-select:focus, .spin-select:hover {
+    border-color: transparent;
+  }
+  .spin-select::after {
+    height: 9px;
+    width: 9px;
+    right: 20px;
+    top: initial;
+  }
+  .spin-select .list {
+    width: 100%;
+    background-color: #412779;
+    border: 1px solid #aca1ca;
+    box-shadow: 0;
+    margin-bottom: 4px;
+    padding: 0;
+  }
+
+.wheel{
+    height: 350px; 
+    width: 350px;
+    background-color: #ccc;
+    border: 15px solid #263742;
+    position: relative;
+    overflow: hidden;
+    transition: 5s;
+    border-radius: 50%;
+}
