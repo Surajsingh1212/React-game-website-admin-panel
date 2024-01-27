@@ -30,6 +30,8 @@ import ManageUsers from './components/adminpanel/pages/ManageUsers';
 import ManangeGames from './components/adminpanel/pages/ManangeGames';
 import Totalpayment from './components/adminpanel/pages/Totalpayment';
 import Withdraw from './components/adminpanel/pages/Withdraw';
+import Createlottery from './components/adminpanel/pages/Createlottery';
+import Createuser from './components/adminpanel/pages/Createuser';
 
 const App = () => {
 
@@ -61,7 +63,9 @@ const App = () => {
           <Route path='addpayment' element={<Addpyment/>} />
           <Route path='invoice' element={<Invoice/>} />
           <Route path='managelottery' element={<Managelottery/>} />
+          <Route path='createlottery' element={<Createlottery/>} />
           <Route path='manageusers' element={<ManageUsers/>} />
+          <Route path='createusers' element={<Createuser/>} />
           <Route path='managegames' element={<ManangeGames/>} />
           <Route path='totalpayment' element={<Totalpayment/>} />
           <Route path='withdrawpayment' element={<Withdraw/>} />

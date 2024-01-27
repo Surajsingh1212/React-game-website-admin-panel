@@ -5,7 +5,7 @@ import '../../../assets/css/spin.css';
 import arrow from '../../../assets/images/icon/arrow.png'
 
 const Wheelplay = () => {
-  const [rotatedeg, setRotatedeg] = useState(0);
+  const [rotatedeg, setRotatedeg] = useState(false);
   const [selectedSegment, setSelectedSegment] = useState(null);
     const selectedSegmentRef = useRef(null);
 
