@@ -1,11 +1,27 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import logo2 from '../../../assets/images/logo2.png';
 import { TiThMenu } from "react-icons/ti";
 
 const Header = () => {
+  const [isSticky,setIsSticky] = useState(false)
+
+  useEffect(()=>{
+    const handleScroll=()=>{
+      if(window.scrollY >100){
+        setIsSticky(true);
+      }
+      else{
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener('scroll',handleScroll)
+    return()=>{
+      window.addEventListener('scroll',handleScroll)
+    }
+  },[])
   return (
-    <div className='header-section'>
+    <div className={`header-section ${isSticky ? 'fixed' : ''}`}>
       <div className='overlay'>
         <div className='container'>
           <div className='row d-flex header-area'>
