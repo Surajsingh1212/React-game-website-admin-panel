@@ -5,6 +5,7 @@ import { CiMail } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
+import { RiUserShared2Line } from "react-icons/ri";
 
 const Signup = () => {
   return (
@@ -19,21 +20,29 @@ const Signup = () => {
                   <h3 className="title" style={{ fontSize: '2.5rem', color: 'white' }}>Ready to get started?</h3>
                   <p>Already have an member ? <Link to="/login" className="log-btn link" style={{ color: '#a1ff00' }}>Login</Link></p>
                 </div>
-                <div className="input-area d-flex align-items-center"style={{fontFamily:'poppins'}}>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
                   <CiUser className='fs-3' style={{ color: 'white' }} />
                   <input type="text" placeholder="Full Name" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{fontFamily:'poppins'}}>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
                   <IoCallOutline className='fs-3' style={{ color: 'white' }} />
                   <input type="text" placeholder="Mobile" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{fontFamily:'poppins'}}>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
                   <CiMail className='fs-3' style={{ color: 'white' }} />
                   <input type="text" placeholder="Email" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{fontFamily:'poppins'}}>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
                   <CiLock className='fs-3' style={{ color: 'white' }} />
                   <input type="text" placeholder="Password" />
+                </div>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
+                  <CiLock className='fs-3' style={{ color: 'white' }} />
+                  <input type="text" placeholder="Confirm Password" />
+                </div>
+                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
+                  <RiUserShared2Line   className='fs-3' style={{ color: 'white' }} />
+                  <input type="text" placeholder="Refferal Code (MRX5107)" />
                 </div>
                 <div className="sidebar-single-item">
                   <label className="checkbox-single d-flex">
