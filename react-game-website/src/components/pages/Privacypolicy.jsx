@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../section/footer/Footer';
 import Header from '../section/header/Header';
+import Backtotop from '../section/backtotop/Backtotop';
 
 const Privacypolicy = () => {
     return (
@@ -69,6 +70,7 @@ const Privacypolicy = () => {
                 </div>
             </div>
             <Footer />
+            <Backtotop/>
         </>
     )
 }

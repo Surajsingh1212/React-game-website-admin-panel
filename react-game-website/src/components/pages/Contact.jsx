@@ -8,6 +8,7 @@ import twitter from '../../assets/images/icon/twitter.png';
 import facebook from '../../assets/images/icon/facebook.png';
 import info1 from '../../assets/images/icon/info-icon-1.png';
 import info2 from '../../assets/images/icon/info-icon-2.png';
+import Backtotop from '../section/backtotop/Backtotop';
 
 const Contact = () => {
   return (
@@ -229,7 +230,7 @@ const Contact = () => {
         </div>
       </div>
       <Footer />
-
+      <Backtotop/>
     </>
   )
 }

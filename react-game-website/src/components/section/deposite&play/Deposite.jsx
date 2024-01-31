@@ -9,7 +9,7 @@ const Deposite = () => {
     seconds,
     minutes,
     hours
-  } = useTime({ format: '12-hour'});
+  } = useTime({ format: '12-hour' });
   return (
     <>
       <div className="drops-wins">
@@ -18,10 +18,10 @@ const Deposite = () => {
             <div className="row justify-content-between align-items-center">
               <div className="col-xxl-5 col-xl-6 col-md-6">
                 <div className="section-header">
-                  <h5 className="sub-title">Drops & Wins ( Live Casino)</h5>
-                  <h2 style={{color:'white',fontSize:'4rem',fontWeight:'600'}}>Easy way for crypto  Play</h2>
+                  <h5 className="sub-title">Fast and secure Deposit</h5>
+                  <h2 className='color-white pop-font-size4'>Easy way for Games Play</h2>
                 </div>
-                <h2 className='fs-1 fw-bold currency'>₹ <CountUp start={4000} end={6000}/></h2>
+                <h2 className='fs-1 fw-bold currency'>₹ <CountUp start={100} end={1000} /></h2>
                 <div className="countdown d-flex align-items-center">
                   <span>Finishes in:</span>
                   <h6>
@@ -40,11 +40,11 @@ const Deposite = () => {
               </div>
               <div className="col-xxl-4 col-xl-5 col-md-6">
                 <div className="right-box">
-                  <h4 className="mb-5 fs-2" style={{color:'white'}}>Deposit and Play</h4>
+                  <h4 className="mb-5 fs-2 color-white">Deposit and Play</h4>
                   <form action="#">
-                    <div className="input-field thumb-select d-flex" style={{fontFamily:'poppins'}}>
+                    <div className="input-field thumb-select d-flex pop-font">
                       <input type="text" placeholder="0.001" />
-                      <select className='nice-select' style={{color:'white'}}>
+                      <select className='nice-select color-white'>
                         <option value="1">Rupees</option>
                         <option value="2">Doller</option>
                         <option value="3">LTC</option>
@@ -53,13 +53,13 @@ const Deposite = () => {
                     <div className=" mt-5 mb-4">
                       <Link to="/login" className="cmn-btn w-100 h-100 link">
                         Start Playing
-                        <FaArrowRightLong className='ms-2'/>
+                        <FaArrowRightLong className='ms-2' />
                       </Link>
                     </div>
                     <p className='mb-1'>By Clicking you agree with our</p>
                     <div className="link-area gap-1 d-flex align-items-center justify-content-center">
-                    <Link to="#" className='link'>Terms and Conditions,</Link>
-                    <Link to="#" className='link'>Privacy Policy</Link>
+                      <Link to="/termandcondition" className='link'>Terms and Conditions,</Link>
+                      <Link to="/privacypolicy" className='link'>Privacy Policy</Link>
                     </div>
                   </form>
                 </div>

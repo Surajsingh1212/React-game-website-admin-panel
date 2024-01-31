@@ -1,27 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import playicon from '../../assets/images/icon/play-icon.png';
+import search from '../../assets/images/icon/search-icon.png';
+import websitegame1 from '../../assets/images/showAllGames/website-game-1.png';
+import websitegame2 from '../../assets/images/showAllGames/website-game-2.png';
+import websitegame3 from '../../assets/images/showAllGames/website-game-3.png';
+import websitegame4 from '../../assets/images/showAllGames/website-game-4.png';
+import websitegame5 from '../../assets/images/showAllGames/website-game-5.png';
+import Backtotop from '../section/backtotop/Backtotop';
 import Footer from '../section/footer/Footer';
 import Header from '../section/header/Header';
-import search from '../../assets/images/icon/search-icon.png';
-import icon1 from '../../assets/images/games-logo-1.png';
-import playicon from '../../assets/images/icon/play-icon.png';
-import game1 from '../../assets/images/games-logo-2.png';
-import game2 from '../../assets/images/games-logo-3.png';
-import game3 from '../../assets/images/games-logo-4.png';
-import game4 from '../../assets/images/games-logo-5.png';
-import game5 from '../../assets/images/games-logo-7.png';
-import game6 from '../../assets/images/games-logo-8.png';
-import game7 from '../../assets/images/games-logo-9.png';
-import game8 from '../../assets/images/games-logo-10.png';
-import game9 from '../../assets/images/games-logo-11.png';
-import game10 from '../../assets/images/games-logo-12.png';
-import game11 from '../../assets/images/games-logo-13.png';
-import game12 from '../../assets/images/games-logo-14.png';
-import game13 from '../../assets/images/games-logo-15.png';
-import game14 from '../../assets/images/games-logo-16.png';
-import game15 from '../../assets/images/games-logo-17.png';
-import game16 from '../../assets/images/games-logo-18.png';
-import game17 from '../../assets/images/games-logo-7.png';
 
 const Games = () => {
     return (
@@ -88,9 +76,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={icon1} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe  position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -98,9 +86,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game1} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame1} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -108,9 +96,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game2} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame2} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -118,9 +106,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game3} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img " src={websitegame3} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -128,9 +116,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game4} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame4} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -138,136 +126,17 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game5} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
                                             </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game17} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game6} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game7} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game8} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game9} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game10} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game11} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game12} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game13} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game14} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game15} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game16} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <div className="btn-area mt-3 text-center">
-                                            <Link to="#" className="cmn-btn link fw-bold">
+                                            <Link to="/login" className="cmn-btn link fw-bold">
                                                 Load More
                                             </Link>
                                         </div>
@@ -277,9 +146,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game8} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe  position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -287,9 +156,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game9} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame1} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -297,9 +166,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game10} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame2} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -307,9 +176,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game11} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img " src={websitegame3} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -317,9 +186,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game12} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame4} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -327,136 +196,16 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game1} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game2} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game2} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game3} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game4} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game5} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game17} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game6} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game7} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game13} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game14} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game15} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game16} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="btn-area mt-3 text-center">
-                                            <Link to="#" className="cmn-btn">
+                                            <Link to="/login" className="cmn-btn link">
                                                 Load More
                                             </Link>
                                         </div>
@@ -466,9 +215,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game14} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe  position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -476,9 +225,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game15} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame1} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -486,9 +235,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game16} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame2} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -496,9 +245,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game4} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img " src={websitegame3} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -506,9 +255,9 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game6} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame4} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
@@ -516,76 +265,17 @@ const Games = () => {
                                             <div className="single-item">
                                                 <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
                                                     <div className="bg-area">
-                                                        <img className="bg-item" src={game7} alt="#" />
+                                                        <img className="bg-item show-game-all-section-img" src={websitegame5} alt="#" />
                                                     </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
+                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="/login">
                                                         <img src={playicon} alt="icon" />
                                                     </Link>
                                                 </div>
                                             </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game8} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game9} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game10} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game11} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game12} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div className="single-item">
-                                                <div className="magnific-area position-relative d-flex align-items-center justify-content-around">
-                                                    <div className="bg-area">
-                                                        <img className="bg-item" src={game13} alt="#" />
-                                                    </div>
-                                                    <Link className="mfp-iframe popupvideo position-absolute d-flex align-items-center justify-content-center" to="#">
-                                                        <img src={playicon} alt="icon" />
-                                                    </Link>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <div className="btn-area mt-3 text-center">
-                                            <Link to="#" className="cmn-btn">
+                                            <Link to="/login" className="cmn-btn link">
                                                 Load More
                                             </Link>
                                         </div>
@@ -597,6 +287,7 @@ const Games = () => {
                 </div>
             </div>
             <Footer />
+            <Backtotop />
         </>
     )
 }

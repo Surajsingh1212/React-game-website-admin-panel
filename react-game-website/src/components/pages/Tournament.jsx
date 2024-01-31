@@ -14,6 +14,7 @@ import playerbg1 from '../../assets/images/players-circle.png';
 import player1 from '../../assets/images/players-img-1.png';
 import player2 from '../../assets/images/players-img-2.png';
 import player3 from '../../assets/images/players-img-3.png';
+import Backtotop from '../section/backtotop/Backtotop';
 
 const Tournament = () => {
   const {
@@ -362,6 +363,7 @@ const Tournament = () => {
         </div>
       </div>
       <Footer />
+      <Backtotop/>
     </>
   )
 }

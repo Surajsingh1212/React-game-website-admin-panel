@@ -13,6 +13,7 @@ import icon3 from '../../assets/images/icon/why-choose-icon-3.png';
 import icon4 from '../../assets/images/icon/why-choose-icon-4.png';
 import icon5 from '../../assets/images/icon/why-choose-icon-5.png';
 import icon6 from '../../assets/images/icon/why-choose-icon-6.png';
+import Backtotop from '../section/backtotop/Backtotop';
 
 
 const About = () => {
@@ -26,7 +27,7 @@ const About = () => {
                <div class="row">
                    <div class="col-lg-8 col-md-10">
                        <div class="main-content">
-                           <h1 style={{color:'white',fontSize:'4rem',fontWeight:'600'}}>About Us</h1>
+                           <h1 className='color-white pop-font-size4'>About Us</h1>
                            <div class="breadcrumb-area">
                                <nav aria-label="breadcrumb">
                                    <ol class="breadcrumb d-flex align-items-center">
@@ -55,7 +56,7 @@ const About = () => {
                     <img src={about2} class="max-un bg-img" alt="#"/>
                     <div class="popup-area">
                         <div class="magnific-area position-relative d-flex align-items-center justify-content-around">
-                            <Link class="mfp-iframe popupvideo position-absolute" to="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">
+                            <Link class="mfp-iframe popupvideo position-absolute" to="/">
                                 <img src={play1} alt="icon"/>
                             </Link>
                         </div>
@@ -69,7 +70,7 @@ const About = () => {
                 <div class="lottery-content">
                     <div class="section-header">
                         <h5 class="sub-title">An adventure to explore the galaxy</h5>
-                        <h2 class="title" style={{color:'white',fontSize:'4rem',fontWeight:'600'}}>Bringing open-world galaxy to all gamers worldwide</h2>
+                        <h2 class="title color-white pop-font-size4">Bringing open-world galaxy to all gamers worldwide</h2>
                         <p>Bizera is a community-based crypto casino that offers their players the best online casino experience possible!At Bizera, we are convinced that blockchain will change the online crypto gambling industry forever! Jump in and check it out for yourself! Have fun and earn crypto!</p>
                     </div>
                     <div class="counter-area">
@@ -166,6 +167,7 @@ const About = () => {
 </div>
 </div>
    <Footer/>
+   <Backtotop/>
    </>
   )
 }

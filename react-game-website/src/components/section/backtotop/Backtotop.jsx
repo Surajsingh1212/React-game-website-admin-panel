@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { MdKeyboardDoubleArrowUp  } from "react-icons/md";
+import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 
 const Backtotop = () => {
     const [showButton, setShowButton] = useState(false);
@@ -24,13 +24,13 @@ const Backtotop = () => {
                     right: '20px',
                     backgroundColor: '#a1ff00',
                     color: 'black',
-                    padding:'10px',
+                    padding: '10px',
                     cursor: 'pointer',
-                    borderRadius:'6px'
+                    borderRadius: '6px'
                 }}>
-                <MdKeyboardDoubleArrowUp  className='fs-3'/>
-                </div>
-                )}
+                <MdKeyboardDoubleArrowUp className='fs-3' />
+            </div>
+            )}
         </div>
     )
 }

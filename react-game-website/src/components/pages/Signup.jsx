@@ -17,31 +17,31 @@ const Signup = () => {
             <div className="form-area">
               <form action="#">
                 <div className="section-text text-center">
-                  <h3 className="title" style={{ fontSize: '2.5rem', color: 'white' }}>Ready to get started?</h3>
+                  <h3 className="title color-white pop-font-size6" >Ready to get started?</h3>
                   <p>Already have an member ? <Link to="/login" className="log-btn link" style={{ color: '#a1ff00' }}>Login</Link></p>
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <CiUser className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <CiUser className='fs-3 color-white' />
                   <input type="text" placeholder="Full Name" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <IoCallOutline className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <IoCallOutline className='fs-3 color-white' />
                   <input type="text" placeholder="Mobile" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <CiMail className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <CiMail className='fs-3 color-white' />
                   <input type="text" placeholder="Email" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <CiLock className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <CiLock className='fs-3 color-white' />
                   <input type="text" placeholder="Password" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <CiLock className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <CiLock className='fs-3 color-white' />
                   <input type="text" placeholder="Confirm Password" />
                 </div>
-                <div className="input-area d-flex align-items-center" style={{ fontFamily: 'poppins' }}>
-                  <RiUserShared2Line   className='fs-3' style={{ color: 'white' }} />
+                <div className="input-area d-flex align-items-center pop-font" >
+                  <RiUserShared2Line   className='fs-3 color-white' />
                   <input type="text" placeholder="Refferal Code (MRX5107)" />
                 </div>
                 <div className="sidebar-single-item">
@@ -53,8 +53,8 @@ const Signup = () => {
                       </span>
                       <span className="item-title d-flex align-items-center">
                         <span>I am at least 18 years of age and I have read,
-                          accepted and agreed to the <u><Link to="#" className='link'>Privacy Policy</Link>,
-                            Bonus T&C, <Link to="#" className='link'>Terms and Conditions</Link></u>
+                          accepted and agreed to the <u><Link to="/termandcondition" className='link'>Privacy Policy</Link>,
+                            Bonus T&C, <Link to="/privacypolicy" className='link'>Terms and Conditions</Link></u>
                         </span>
                       </span>
                     </span>
@@ -71,7 +71,7 @@ const Signup = () => {
                     </span>
                   </label>
                   <div className="btn-area text-center">
-                    <Link to='#' className="cmn-btn mt-4 link">Get Start Now
+                    <Link to='/login' className="cmn-btn mt-4 link">Get Start Now
                       <FaArrowRightLong className='ms-2' />
                     </Link>
                   </div>

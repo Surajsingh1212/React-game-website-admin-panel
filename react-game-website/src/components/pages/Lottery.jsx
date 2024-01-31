@@ -15,6 +15,7 @@ import work1 from '../../assets/images/icon/how-works-icon-4.png';
 import work2 from '../../assets/images/icon/how-works-icon-5.png';
 import work3 from '../../assets/images/icon/how-works-icon-6.png';
 import { useTime } from 'react-timer-hook';
+import Backtotop from '../section/backtotop/Backtotop';
 
 const Lottery = () => {
   const {
@@ -372,6 +373,7 @@ const Lottery = () => {
         </div>
       </div>
       <Footer />
+      <Backtotop/>
     </>
   )
 }

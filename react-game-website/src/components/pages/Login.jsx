@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { CiLock, CiMail } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { CiMail } from "react-icons/ci";
-import { CiLock } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -11,15 +10,15 @@ const Login = () => {
         <div className="form-area">
           <form action="#">
             <div className="section-text text-center">
-              <h3 className="title pt-2" style={{ fontSize: '2.5rem', color: 'white' }}>Welcome Back</h3>
+              <h3 className="title pt-2 color-white pop-font-size6">Welcome Back</h3>
               <p>Not a member ? <Link to="/signup" className="reg-btn link" style={{color:'#a1ff00'}}>Register</Link></p>
             </div>
-            <div className="input-area d-flex align-items-center" style={{fontFamily:'poppins'}}>
-              <CiMail className='fs-3' style={{color:'white'}}/>
+            <div className="input-area d-flex align-items-center pop-font">
+              <CiMail className='fs-3 color-white'/>
               <input type="text" placeholder="Email" />
             </div>
-            <div className="input-area d-flex align-items-center" style={{fontFamily:'poppins'}}>
-              <CiLock className='fs-3' style={{color:'white'}}/>
+            <div className="input-area d-flex align-items-center pop-font">
+              <CiLock className='fs-3 color-white'/>
               <input type="text" placeholder="Password"/>
             </div>
             <div className="checkbox-item d-flex justify-content-between">
@@ -34,7 +33,7 @@ const Login = () => {
                   </span>
                 </span>
               </label>
-              <p><Link to='#' className='link' style={{ color: 'white' }}>Forget Password</Link></p>
+              <p><Link to='#' className='link color-white'>Forget Password</Link></p>
             </div>
             <div className="btn-area text-center">
               <Link to="/admin/dashboard" className="cmn-btn mt-4 link">Login
@@ -45,6 +44,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+
   )
 }
 

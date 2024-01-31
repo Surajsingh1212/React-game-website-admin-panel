@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../section/header/Header';
 import Footer from '../section/footer/Footer';
+import Backtotop from '../section/backtotop/Backtotop';
 
 const Termandconditions = () => {
   return (
@@ -65,6 +66,7 @@ const Termandconditions = () => {
         </div>
       </div>
       <Footer/>
+      <Backtotop/>
     </>
   )
 }

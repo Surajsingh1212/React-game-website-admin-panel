@@ -17,14 +17,14 @@ const Withdrawal = () => {
               <div className="col-lg-9">
                 <div className="section-top">
                   <div className="section-text">
-                    <h5 className="sub-title">The Fastest Withdrawals In The Galaxy</h5>
-                    <h2 className="title" style={{fontSize:'3rem',color:'white'}}>Enjoy fast, secure withdrawals at Casino Mr X.</h2>
-                    <p>Find gamers who care about the same things you do — whether you have shared values or common goals — and connect with them in a meaningful way.</p>
+                    <h5 className="sub-title">The Fastest Withdrawals In The Gaming Platforms</h5>
+                    <h2 className="title color-white pop-font-size" >Enjoy fast, secure withdrawals at Casino Mrx</h2>
+                    <p>MrX Gaming Platform they've made it super easy to handle your money-your earnings in a safe and fast way withdrawals.</p>
                   </div>
                   <div className="btn-area">
                     <Link to="/signup" className="cmn-btn link">
                       Enter our Universe
-                      <FaArrowRightLong className='ms-2'/>
+                      <FaArrowRightLong className='ms-2' />
                     </Link>
                   </div>
                 </div>
@@ -36,7 +36,7 @@ const Withdrawal = () => {
                   <div className="icon-box">
                     <img src={features1} alt="#" />
                   </div>
-                  <h3 style={{color:'white'}} className='fw-bold fs-1'><CountUp start={1} end={100}/></h3>
+                  <h3 className='fw-bold fs-1 color-white'><CountUp start={1} end={100} /></h3>
                   <p>Welcome Bonus</p>
                 </div>
               </div>
@@ -45,7 +45,7 @@ const Withdrawal = () => {
                   <div className="icon-box">
                     <img src={features2} alt="#" />
                   </div>
-                  <h3 style={{color:'white'}} className='fw-bold fs-1'><CountUp start={1} end={10}/>%</h3>
+                  <h3 className='fw-bold fs-1 color-white'><CountUp start={1} end={10} />%</h3>
                   <p>Cash Back </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ const Withdrawal = () => {
                   <div className="icon-box">
                     <img src={features3} alt="#" />
                   </div>
-                  <h3 style={{color:'white'}} className='fw-bold fs-1'><CountUp start={4000} end={5000}/>+</h3>
+                  <h3 className='fw-bold fs-1 color-white'><CountUp start={0} end={10} />+</h3>
                   <p>Games</p>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const Withdrawal = () => {
                   <div className="icon-box">
                     <img src={features4} alt="#" />
                   </div>
-                  <h3 style={{color:'white'}} className='fw-bold fs-1'><CountUp start={1} end={100}/>%</h3>
+                  <h3 className='fw-bold fs-1 color-white'><CountUp start={1} end={100} />%</h3>
                   <p>Scure & Stable</p>
                 </div>
               </div>

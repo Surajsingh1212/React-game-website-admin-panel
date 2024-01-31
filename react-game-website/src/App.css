@@ -26,3 +26,51 @@
 }
 
 /* login page center div css end*/
+
+/* extra css start*/
+
+/* index page games section */
+.top-bottom-padding{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.games-img-border-radius{
+    border-radius: 30px;
+}
+.show-game-all-section-img{
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.pop-font{
+    font-family: poppins;
+}
+.color-white{
+    color: white;
+}
+.pop-font-size{
+    font-size: 3rem;
+}
+.pop-font-size2{
+    font-size: 3.5rem;
+}
+.pop-font-size3{
+    font-size: 1.5rem;
+}
+.pop-font-size4{
+    font-size: 4rem;
+}
+.pop-font-size5{
+    font-size: 2rem;  
+}
+.pop-font-size6{
+    font-size: 2.5rem;   
+}
+.pop-font-weight{
+   font-weight: 600;
+}
+.pop-font-weight1{
+    font-weight: 400;
+ }
+/* extra css end */
+

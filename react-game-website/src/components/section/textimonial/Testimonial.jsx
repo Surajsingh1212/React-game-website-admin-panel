@@ -4,6 +4,11 @@ import work2 from '../../../assets/images/icon/how-works-icon-2.png'
 import work3 from '../../../assets/images/icon/how-works-icon-3.png'
 
 const Testimonial = () => {
+  const stepItems = [
+    { image: work1, title: 'Instant Register', para: 'Instant Register within 5 minutes and get ₹ 100 bonus' },
+    { image: work2, title: 'Fastest Deposit', para: 'Deposit with Fastest Secure Payment Gateway' },
+    { image: work3, title: 'Play and get Win', para: 'Get fastest Withdraw with Payment Gateway' },
+  ]
   return (
     <>
       <div className="how-works">
@@ -13,45 +18,25 @@ const Testimonial = () => {
               <div className="col-lg-7">
                 <div className="section-header text-center">
                   <h5 className="sub-title">How it works</h5>
-                  <h2 className="title" style={{fontSize:'3.5rem',color:'white'}}>It’s Really Easy!</h2>
-                  <p>It’s easier than you think.Follow 3 simple easy steps</p>
+                  <h2 className="title color-white pop-font-size2" >It’s Really Easy!</h2>
+                  <p>It’s easier than you think Follow 3 simple easy steps</p>
                 </div>
               </div>
             </div>
             <div className="row cus-mar">
-              <div className="col-xl-4 col-sm-6">
-                <div className="single-box text-center">
-                  <div className="thumb">
-                    <img src={work1} alt="#" />
-                  </div>
-                  <div className="text-area">
-                    <h5 style={{color:'white'}} className='fw-bold fs-4'>Instant Register</h5>
-                    <p>Instant Register within 5 minutes</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-sm-6">
-                <div className="single-box mid text-center">
-                  <div className="thumb">
-                    <img src={work2} alt="#" />
-                  </div>
-                  <div className="text-area">
-                    <h5 style={{color:'white'}} className='fw-bold fs-4'>Fastest Deposit</h5>
-                    <p>Deposit with Fastest Lightning Network</p>
+              {stepItems.map((item, index) => (
+                <div className="col-xl-4 col-sm-6">
+                  <div className="single-box text-center" key={index}>
+                    <div className="thumb">
+                      <img src={item.image} alt="#" />
+                    </div>
+                    <div className="text-area">
+                      <h5 className='fw-bold fs-4 color-white'>{item.title}</h5>
+                      <p>{item.para}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-xl-4 col-sm-6">
-                <div className="single-box text-center">
-                  <div className="thumb">
-                    <img src={work3} alt="#" />
-                  </div>
-                  <div className="text-area">
-                    <h5 style={{color:'white'}} className='fw-bold fs-4'>Play and get Win</h5>
-                    <p>Get fastest Withdraw with Lightning Network</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
