@@ -1,6 +1,6 @@
 {
   "name": "react-game-website",
-  "homepage": "/",
+  "homepage": "https://mrx.fuelinfotech.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.13.2",
+    "axios": "^1.6.7",
     "bootstrap": "^5.3.2",
     "framer-motion": "^10.18.0",
     "react-bootstrap": "^2.10.0",
@@ -19,6 +20,7 @@
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "react-timer-hook": "^3.0.7",
+    "sweetalert2": "^11.10.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

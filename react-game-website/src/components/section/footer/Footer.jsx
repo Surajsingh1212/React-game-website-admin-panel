@@ -54,7 +54,7 @@ const Footer = () => {
               <div className="row justify-content-between align-items-center">
                 <div className="col-lg-7 d-flex justify-content-center justify-content-lg-start order-lg-0 order-1">
                   <div className="copyright text-center">
-                    <p>© MRX 2024 All rights reserved | Design by Team Dizital Dream .</p>
+                    <p>© MRX 2024 All rights reserved . </p>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-5 d-flex justify-content-center justify-content-lg-end">

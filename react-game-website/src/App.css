@@ -73,4 +73,17 @@
     font-weight: 400;
  }
 /* extra css end */
+/* extra admin css start*/
+.admin-broder-rbg{
+    background-color: #201048;
+    border-radius: 10px;
+}
+.admin-toggle-password-button{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+}
+/* extra admin css end */
 
