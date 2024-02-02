@@ -27,7 +27,7 @@ const About = () => {
                             <div class="row">
                                 <div class="col-lg-8 col-md-10">
                                     <div class="main-content">
-                                        <h1 className='color-white pop-font-size4'>About Us</h1>
+                                        <h1 className='color-white pop-font-size4 pop-font-weight'>About Us</h1>
                                         <div class="breadcrumb-area">
                                             <nav aria-label="breadcrumb">
                                                 <ol class="breadcrumb d-flex align-items-center">
@@ -102,7 +102,7 @@ const About = () => {
                             <div class="col-lg-12">
                                 <div class="section-header text-center">
                                     <h5 class="sub-title">Why choose it</h5>
-                                    <h2 class="title" style={{ color: 'white', fontSize: '3rem', fontWeight: '600' }}>We value all our players and we understand the thrill of online gaming</h2>
+                                    <h2 class="title color-white pop-font-weight pop-font-size">We value all our players and we understand the thrill of online gaming</h2>
                                     <p>Mind-blowing bonuses. Zero withdrawal fees. Flash-like customer support.</p>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon1} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>VIP Membership</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>VIP Membership</h5>
                                     <p>Become a Premium VIP Member for a month and enjoy the benefits that will enrich your gambling adventures.</p>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon2} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>Provably fair</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>Provably fair</h5>
                                     <p>We utilize the industry standard for provably fair gaming. Verify drawings with our or 3rd party verification tools.</p>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon3} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>Fast Withdrawals</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>Fast Withdrawals</h5>
                                     <p>Get your winnings paid out to your wallet on your own terms. Simply select the withdrawal speed and confirm.</p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon4} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>Progressive jackpots</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>Progressive jackpots</h5>
                                     <p>With every bet on dice and roulette you have the chance to win our ever growing jackpot.</p>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon5} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>Low house edge</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>Low house edge</h5>
                                     <p>You’re here to win often and a lot. Our games have extremely low house edge, starting at only 1%.</p>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ const About = () => {
                                     <div class="icon-area">
                                         <img src={icon6} alt="#" />
                                     </div>
-                                    <h5 style={{ color: 'white', fontSize: '2rem', fontWeight: '600' }}>Secure and private</h5>
+                                    <h5 className=' color-white pop-font-weight5 pop-font-size'>Secure and private</h5>
                                     <p>We don’t collect sensitive private information such as bank accounts, which makes your stay with us safe and private.</p>
                                 </div>
                             </div>

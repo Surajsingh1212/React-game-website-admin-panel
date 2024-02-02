@@ -22,7 +22,7 @@ const Games = () => {
                             <div className="row">
                                 <div className="col-lg-8 col-md-10">
                                     <div className="main-content">
-                                        <h1 style={{ color: 'white', fontSize: '4rem', fontWeight: '600' }}>Games</h1>
+                                        <h1 className='color-white pop-font-size4 pop-font-weight'>Games</h1>
                                         <div className="breadcrumb-area">
                                             <nav aria-label="breadcrumb">
                                                 <ol className="breadcrumb d-flex align-items-center">

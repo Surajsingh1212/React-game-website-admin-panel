@@ -21,7 +21,7 @@ const Contact = () => {
               <div className="row">
                 <div className="col-lg-8 col-md-10">
                   <div className="main-content">
-                    <h1 style={{color:'white',fontSize:'4rem',fontWeight:'600'}}>Contact</h1>
+                    <h1 className='color-white pop-font-size4 pop-font-weight'>Contact</h1>
                     <div className="breadcrumb-area">
                       <nav aria-label="breadcrumb">
                         <ol className="breadcrumb d-flex align-items-center">
@@ -45,21 +45,21 @@ const Contact = () => {
               <div className="col-lg-6">
                 <div className="section-text">
                   <h5 className="sub-title">Contact</h5>
-                  <h2 className="title" style={{color:'white',fontSize:'4rem',fontWeight:'700'}}>Get in Touch</h2>
+                  <h2 className="title pop-font-weight2 color-white pop-font-size4">Get in Touch</h2>
                 </div>
                 <div className="cus-mar d-flex justify-content-between align-items-center">
                   <div className="single-box">
                     <div className="icon-area">
                       <img src={info1} alt="icon"/>
                     </div>
-                    <h5 style={{color:'white',fontSize:'2rem',fontWeight:'600'}}>Visit Us</h5>
+                    <h5 className=' pop-font-weight color-white pop-font-size5'>Visit Us</h5>
                     <p>D77 VibhutiKhand Lucknow Uttar Pradesh Lucknow </p>
                   </div>
                   <div className="single-box">
                     <div className="icon-area">
                       <img src={info2} alt="icon"/>
                     </div>
-                    <h5 style={{color:'white',fontSize:'2rem',fontWeight:'600'}}>Get in Touch</h5>
+                    <h5 className=' pop-font-weight color-white pop-font-size5'>Get in Touch</h5>
                     <p className="phone-email">+91 34452345423</p>
                     <p className="phone-email">info@dizibizz.com</p>
                   </div>
@@ -67,16 +67,16 @@ const Contact = () => {
               </div>
               <div className="col-lg-6">
                 <form action="#">
-                  <div className="col-12">
-                    <div className="single-input" style={{fontFamily:'poppins'}}>
+                  <div className="col-12 ">
+                    <div className="single-input pop-font" >
                       <label for="name">Name</label>
                       <input type="text" id="name" placeholder="Suraj Singh " autocomplete="off"/>
                     </div>
-                    <div className="single-input" style={{fontFamily:'poppins'}}>
+                    <div className="single-input pop-font" >
                       <label for="email">Email</label>
                       <input type="text" id="email" placeholder="your@gmail.com" autocomplete="off"/>
                     </div>
-                    <div className="single-input" style={{fontFamily:'poppins'}}>
+                    <div className="single-input pop-font" >
                       <label for="message">Message</label>
                       <textarea cols="30" id="message" rows="4" placeholder="Type something here"></textarea>
                     </div>
@@ -97,7 +97,7 @@ const Contact = () => {
               <div className="col-lg-5">
                 <div className="section-area">
                   <h5 className="sub-title">FAQ Questions</h5>
-                  <h2 className="title" style={{color:'white',fontSize:'3.3rem',fontWeight:'700'}}>Discover the most commonly asked questions</h2>
+                  <h2 className="title color-white pop-font-weigh2 pop-font-size9">Discover the most commonly asked questions</h2>
                 </div>
               </div>
               <div className="col-lg-6">
@@ -175,7 +175,7 @@ const Contact = () => {
               <div className="col-lg-12">
                 <div className="section-text text-center">
                   <h5 className="sub-title">Social Media</h5>
-                  <h2 className="title mt-0" style={{color:'white',fontSize:'4rem',fontWeight:'550'}}>Follow us on</h2>
+                  <h2 className="title mt-0 color-white pop-font-weight3 pop-font-size4">Follow us on</h2>
                 </div>
               </div>
             </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                   <div className="icon-area">
                     <img src={facebook} alt="#"/>
                   </div>
-                  <h4 style={{color:'white',fontSize:'2.5rem',fontWeight:'400'}}>Facebook</h4>
+                  <h4 className='color-white pop-font-weight1 pop-font-size6'>Facebook</h4>
                   <p>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolores. </p>
                   <Link>
                     Follow US
@@ -200,7 +200,7 @@ const Contact = () => {
                   <div className="icon-area">
                     <img src={twitter} alt="#"/>
                   </div>
-                  <h4 style={{color:'white',fontSize:'2.5rem',fontWeight:'400'}}>Twitter</h4>
+                  <h4 className='color-white pop-font-weight1 pop-font-size6'>Twitter</h4>
                   <p>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolores. </p>
                   <Link>
                     Follow US
@@ -215,7 +215,7 @@ const Contact = () => {
                   <div className="icon-area">
                     <img src={insta} alt="#"/>
                   </div>
-                  <h4 style={{color:'white',fontSize:'2.5rem',fontWeight:'400'}}>Instagram</h4>
+                  <h4  className='color-white pop-font-weight1 pop-font-size6'>Instagram</h4>
                   <p>Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolores. </p>
                   <Link>
                     Follow US

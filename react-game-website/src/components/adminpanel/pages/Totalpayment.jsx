@@ -5,26 +5,26 @@ import { Row } from 'react-bootstrap';
 const Totalpayment = () => {
   return (
     <>
-      <Row className='align-item-center d-flex' style={{ borderRadius: "10px", backgroundColor: '#3a2372', padding: '12px 30px' }}>
+      <Row className='align-item-center d-flex admin-broder-rbg2' >
         <Flex justify='space-between'>
           <div>
-            <h4 style={{ color: 'white' }} className='pt-3 fw-bold'>Wallet</h4>
+            <h4 className='pt-3 fw-bold color-white'>Wallet</h4>
           </div>
           <div className='rightSection'>
             <span>Total Balance : ₹ 10000 </span>
           </div>
         </Flex>
       </Row>
-      <Row className='align-item-center d-flex mt-3  ' style={{ borderRadius: "10px", backgroundColor: '#201048', padding: '12px 30px' }}>
+      <Row className='align-item-center d-flex mt-3 admin-broder-rbg admin-table-padding1 '>
         <div class="transaction-box">
           <div class="top-filter d-flex align-items-end">
-            <div class="single-filter" >
+            <div class="single-filter pop-font" >
               <p>Month</p>
-              <input type="text" placeholder="2023/01" style={{ fontFamily: 'poppins' }} />
+              <input type="text" placeholder="2023/01" />
             </div>
             <div class="single-filter">
               <p>Type</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius' >
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>Type 1</option>
                 <option value="2" className='list'>Type 2</option>
@@ -33,7 +33,7 @@ const Totalpayment = () => {
             </div>
             <div class="single-filter">
               <p >Currency</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>Currency 1</option>
                 <option value="2" className='list'>Currency 2</option>

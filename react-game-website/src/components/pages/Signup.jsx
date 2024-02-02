@@ -14,15 +14,52 @@ import axiosInstance from '../../api'
 
 const Signup = () => {
   const [showPassword,setShowPassword] = useState(false)
+  //for validaion error 
+  const [validateError,setValidateError] = useState({
+    Name:'',Email:'',Mobile:'',Password:'',CPassword:'',RCode:''
+  })
+  const validateField=(fieldName,value)=>{
+    let errorMessage='';
+    switch(fieldName){
+      case 'Name': 
+      errorMessage= !/^[a-zA-Z ]{5,}$/.test(value) ? 'Name must be at least 5 characters long':'';
+      break;
+      case 'Email':
+        errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address':'';
+        break;
+      case 'Mobile':
+        errorMessage= !/^\d{10,}$/.test(value) ? 'Invalid mobile number':'';
+        break;
+      case 'Password':
+        errorMessage= value.length <= 8 ? 'Password must be at least 8 characters long':'';
+        break;
+      case 'CPassword':
+        errorMessage= value !==formData.Password ? 'Passwords do not match':'';
+        break;
+      case 'RCode':
+        errorMessage= value.length<=7 ? 'Invalid Refferal Code ':'';
+        break;
+        default:
+      break;
+    }
+    setValidateError({
+      ...validateError,
+      [fieldName]:errorMessage,
+    })
+  }
+  // handle form for getting data for input field 
   const [formData,setFormData] = useState({
     Name:'',Email:'',Mobile:'',Password:'',CPassword:'',RCode:'',agreementChecked:true,promotionsChecked:false
   })
+  // handle input change
   const handleInputChange=(e)=>{
     setFormData({
       ...formData,[e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value,
     })
+    validateField(e.target.name,e.target.value)
   }
   const Navigate = useNavigate()
+  // handle input feilds submit
   const handleSubmit=async(e)=>{
     e.preventDefault()
     if (!formData.Name || !formData.Email || !formData.Mobile || !formData.Password || !formData.CPassword) {
@@ -102,29 +139,35 @@ const Signup = () => {
                 <div className="input-area d-flex align-items-center pop-font" >
                   <CiUser className='fs-3 color-white' />
                   <input type="text" placeholder="Full Name" value={formData.Name} onChange={handleInputChange} name='Name'/>
-                </div>
+                  </div>
+                  {validateError.Name && <span className="color-red">{validateError.Name}</span>}
                 <div className="input-area d-flex align-items-center pop-font" >
                   <IoCallOutline className='fs-3 color-white' />
                   <input type="text" placeholder="Mobile"  value={formData.Mobile} onChange={handleInputChange} name='Mobile'/>
                 </div>
+                {validateError.Mobile && <span className="color-red">{validateError.Mobile}</span>}
                 <div className="input-area d-flex align-items-center pop-font" >
                   <CiMail className='fs-3 color-white' />
                   <input autoComplete='useremail' type="email" placeholder="Email" value={formData.Email} onChange={handleInputChange} name='Email'/>
                 </div>
+                {validateError.Email && <span className="color-red">{validateError.Email}</span>}
                 <div className="input-area d-flex align-items-center pop-font" >
                   <CiLock className='fs-3 color-white' />
                   <input autoComplete='new-password' type={showPassword ? 'text':'password'} placeholder="Password" value={formData.Password} onChange={handleInputChange} name='Password'/>
                   <button className='toggle-password-button color-white fs-5' type='button' onClick={passwordTogglevisible}>{showPassword? <IoEye />:<FaEyeSlash />}</button>
                 </div>
+                {validateError.Password && <span className="color-red">{validateError.Password}</span>}
                 <div className="input-area d-flex align-items-center pop-font" >
                   <CiLock className='fs-3 color-white' />
                   <input autoComplete='new-password' type={showPassword ? 'text':'password'} placeholder="Confirm Password" value={formData.CPassword} onChange={handleInputChange} name='CPassword'/>
                   <button className='toggle-password-button color-white fs-5' type='button' onClick={passwordTogglevisible}>{showPassword? <IoEye />:<FaEyeSlash />}</button>
                 </div>
+                {validateError.CPassword && <span className="color-red">{validateError.CPassword}</span>}
                 <div className="input-area d-flex align-items-center pop-font" >
                   <RiUserShared2Line   className='fs-3 color-white' />
                   <input type="text" placeholder="Refferal Code (MRX5107)" value={formData.RCode} onChange={handleInputChange} name='RCode'/>
                 </div>
+                {validateError.RCode && <span className="color-red">{validateError.RCode}</span>}
                 <div className="sidebar-single-item">
                   <label className="checkbox-single d-flex">
                     <span className="content-area">

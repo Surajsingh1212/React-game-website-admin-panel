@@ -13,10 +13,10 @@ const AdminLottery = () => {
   } = useTime({ format: '12-hour' });
   return (
     <>
-      <Row className='align-item-center d-flex' style={{ borderRadius: "10px", backgroundColor: '#3a2372', padding: '12px 30px' }}>
+      <Row className='align-item-center d-flex admin-broder-rbg2'>
         <Flex justify='space-between'>
           <div>
-            <h4 style={{ color: 'white' }} className='pt-3 fw-bold'>Daily Lottery</h4>
+            <h4 className='pt-3 fw-bold color-white'>Daily Lottery</h4>
             <div>
               <h6 className="sub-title">Lottery Draw Starts In:</h6>
               <div className=" d-flex align-items-center">
@@ -34,16 +34,16 @@ const AdminLottery = () => {
           </div>
         </Flex>
       </Row>
-      <Row className='align-item-center d-flex mt-3  ' style={{ borderRadius: "10px", backgroundColor: '#201048', padding: '12px 30px' }}>
+      <Row className='align-item-center d-flex mt-3 admin-table-padding1 admin-broder-rbg' >
         <div className="transaction-box">
           <div className="top-filter d-flex align-items-end">
-            <div className="single-filter" >
+            <div className="single-filter pop-font" >
               <p>Search By Name</p>
-              <input type="text" placeholder="Enter Name" style={{ fontFamily: 'poppins' }} />
+              <input type="text" placeholder="Enter Name"/>
             </div>
             <div className="single-filter">
               <p>Ticket</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>1</option>
                 <option value="2" className='list'>2</option>
@@ -52,7 +52,7 @@ const AdminLottery = () => {
             </div>
             <div className="single-filter">
               <p >Amount</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>High to Low</option>
                 <option value="2" className='list'>Low to High</option>

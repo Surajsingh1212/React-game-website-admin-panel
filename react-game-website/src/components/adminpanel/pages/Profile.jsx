@@ -1,25 +1,64 @@
-import React,{useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import ProfileAvatar from '../../../assets/images/table-image-5.png';
-import { IoEye } from "react-icons/io5";
-import { FaEyeSlash } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import axiosInstance from '../../../api';
-import { useNavigate } from 'react-router-dom';
+import ProfileAvatar from '../../../assets/images/table-image-5.png';
 
 const Profile = () => {
+  // get data from localstorage 
   const userData = JSON.parse(localStorage.getItem('user'))
-  const [showPassword, setShowPassword] = useState(false);
+  // Handle Form Validation 
+  const [validateError, setValidateError] = useState({
+    Name: '', Email: '', Mobile: ''
+  })
+  const validateField = (fieldName, value) => {
+    let errorMessage = ''
+    switch (fieldName) {
+      case 'Name':
+        errorMessage = !/^[a-zA-Z ]{5,}$/.test(value) ? 'Name must be at least 5 characters long' : '';
+        break;
+      case 'Email':
+        errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address' : '';
+        break;
+      case 'Mobile':
+        errorMessage = !/^\d{10,}$/.test(value) ? 'Invalid mobile number' : '';
+        break;
+      default:
+        break;
+    }
+    setValidateError({
+      ...validateError,
+      [fieldName]: errorMessage
+    })
+  }
+  // for get data form input fields 
   const [formData, setFormData] = useState({
     Name: '', Email: '', Mobile: ''
   })
+  // handel input filds change
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
+    validateField(e.target.name,e.target.value)
   }
-  const Navigate=useNavigate()
+
+
+  // for map data 
+  const [mapData, setMapData] = useState({
+    Name: '', Email: '', Mobile: '', MCode: '', JoinDate: '', RCode: ''
+  })
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('user'))
+    if (userData) {
+      setMapData({
+        Name: userData.MemberName, Email: userData.Email, Mobile: userData.Mobile, MCode: userData.MemberCode, JoinDate: userData.JoiningDate, RCode: userData.ReferralCode,
+      })
+    }
+
+  }, [])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!formData.Name || !formData.Email || !formData.Mobile) {
@@ -33,29 +72,38 @@ const Profile = () => {
     }
     try {
       const UpdateProfile = await axiosInstance.post('Members/UpdateProfile', {
-        MemberId:userData.MemberId,
-        FullName:formData.Name,
-        Email:formData.Email ,
-        Mobile:formData.Mobile
+        MemberId: userData.MemberId,
+        FullName: formData.Name,
+        Email: formData.Email,
+        Mobile: formData.Mobile
       })
-      if(UpdateProfile.data &&  UpdateProfile.data.StatusCode === 1){
+      if (UpdateProfile.data && UpdateProfile.data.status === 'Success') {
         Swal.fire({
           icon: 'success',
           title: ' Update Successful!',
           text: 'Your profile update successfully.',
           confirmButtonColor: '#35bf08',
         })
-        Navigate('/admin/dashboard')
+        const updatedUserData = {
+          ...userData,
+          MemberName: formData.Name,
+          Email: formData.Email,
+          Mobile: formData.Mobile
+        }
+        localStorage.setItem('user', JSON.stringify(updatedUserData))
+        setMapData({
+          Name: updatedUserData.MemberName, Email: updatedUserData.Email, Mobile: updatedUserData.Mobile, MCode: userData.MemberCode, JoinDate: userData.JoiningDate, RCode: userData.ReferralCode,
+        })
       }
-      else{
+      else {
         Swal.fire({
           icon: 'error',
           title: 'Chnage Fialed!',
-          text: 'Your credentials invalid.',
+          text: UpdateProfile.data.statusText,
           confirmButtonColor: '#35bf08',
         })
       }
-      setFormData({Name: '', Email: '', Mobile: ''})
+      setFormData({ Name: '', Email: '', Mobile: '' })
     }
     catch (error) {
       Swal.fire({
@@ -65,9 +113,6 @@ const Profile = () => {
         confirmButtonColor: '#35bf08',
       })
     }
-  }
-  const passwordTogglevisible = () => {
-    setShowPassword(!showPassword)
   }
   return (
     <Container>
@@ -81,18 +126,20 @@ const Profile = () => {
             </Col>
           </Row>
           <Row className="mt-2">
-            <Col className="text-center">
+            <Col className="ps-5">
               <div className="h2">
-                <p> Suraj Singh</p>
+                <p> My Code : {mapData.MCode}</p>
+                <p> Full Name : {mapData.Name} </p>
               </div>
               <div>
-                <p> +91 63934045649 </p>
-                <p> demo@gmail.com</p>
+                <p> Mobile : +91 {mapData.Mobile} </p>
+                <p> Email : {mapData.Email}</p>
               </div>
-              <hr className="my-4" />
-              <p>
-                Hello, I'm Suraj Kumar, a passionate and dedicated web developer with a flair.
-              </p>
+              <div>
+                <p> JoinDate : {mapData.JoinDate} </p>
+
+                <p> My Refferal Code : {mapData.RCode ? 'mapData.RCode' : 'No Refferal'} </p>
+              </div>
             </Col>
           </Row>
         </Col>
@@ -110,58 +157,26 @@ const Profile = () => {
               <Row>
                 <Col lg="6" className='pop-font'>
                   <label for="input-username"> Full Name</label>
-                  <input type='text' required id='input-username' placeholder='Enter Name' name='Name' value={formData.Name} onChange={handleInputChange}/>
-                </Col>
+                  <input type='text' required id='input-username' placeholder='Enter Name' name='Name' value={formData.Name} onChange={handleInputChange} />
+                 {validateError.Name && <span className='color-red'>{validateError.Name}</span>}
+                  </Col>
                 <Col lg="6" className='pop-font'>
                   <label for="email">Email address</label>
                   <input type='email' required id='email' placeholder='Enter email' name='Email' value={formData.Email} onChange={handleInputChange} />
-                </Col>
+                  {validateError.Email && <span className='color-red'>{validateError.Email}</span>}
+                  </Col>
               </Row>
               <Row>
                 <Col lg="6" className='pop-font'>
                   <label for="mobile">Mobile</label>
-                  <input type='text' required id='mobile' placeholder='Enter mobile' name='Mobile' value={formData.Mobile} onChange={handleInputChange}/>
-                </Col>
+                  <input type='text' required id='mobile' placeholder='Enter mobile' name='Mobile' value={formData.Mobile} onChange={handleInputChange} />
+                  {validateError.Mobile && <span className='color-red'>{validateError.Mobile}</span>}
+                  </Col>
                 <Col lg="6" className='pop-font'>
                   <label for="password">Password</label>
-                  <input type={showPassword ? 'text' : 'password'} autoComplete='current-password' required id='oldpassword' placeholder=' Old Password' onChange={handleInputChange} />
-                  <button className='admin-toggle-password-button fs-5 ' type='button' onClick={passwordTogglevisible}>{showPassword ? <IoEye /> : <FaEyeSlash />}</button>
+                  <input type="password" autoComplete='current-password' readOnly id='oldpassword' placeholder='For Password Go To Change Password' />
                 </Col>
               </Row>
-            </div>
-            <hr className="my-4" />
-            {/* Address */}
-            <h6 className="heading-small mb-4 color-white">
-              Contact information
-            </h6>
-            <div className="pl-lg-4">
-              <Row>
-                <Col md="12" className='pop-font'>
-                  <label for="address">Address</label>
-                  <input type='text' required id='address' placeholder='Enter Address' />
-                </Col>
-              </Row>
-              <Row>
-                <Col lg="4" className='pop-font'>
-                  <label for="city">City</label>
-                  <input type='text' required id='city' placeholder='Enter City' />
-                </Col>
-                <Col lg="4" className='pop-font'>
-                  <label for="country">Country</label>
-                  <input type='text' required id='country' placeholder='Enter Country' />
-                </Col>
-                <Col lg="4" className='pop-font'>
-                  <label for="pincode">Postal code</label>
-                  <input type='number' required id='pincode' placeholder='Enter Pincode' />
-                </Col>
-              </Row>
-            </div>
-            <hr className="my-4" />
-            {/* Description */}
-            <h6 className="heading-small mb-4 color-white">About me</h6>
-            <div className="pl-lg-4 pop-font">
-              <label for="about-us">About Me</label>
-              <input type='text' required id='about-us' placeholder='About' />
             </div>
           </div>
           <Row className="align-items-center mt-4">

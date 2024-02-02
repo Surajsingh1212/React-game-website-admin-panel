@@ -7,8 +7,8 @@ const Createlottery = () => {
         <Container>
             <Row className='px-0'>
                 <div className='col-md-3 '></div>
-                <div className='col-md-6 p-5' style={{ borderRadius: "10px", backgroundColor: '#201048' }}>
-                    <h1 className='text-center mt-4' style={{ color: 'white' }}>Create Lottery </h1>
+                <div className='col-md-6 p-5 admin-broder-rbg' >
+                    <h1 className='text-center mt-4 color-white'>Create Lottery </h1>
                     <div className='mt-3 '>
                         <Row className='mt-3'>
                             <Col>

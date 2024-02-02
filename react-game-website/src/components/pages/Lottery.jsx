@@ -34,7 +34,7 @@ const Lottery = () => {
               <div className="row">
                 <div className="col-lg-8 col-md-10">
                   <div className="main-content">
-                    <h1 style={{ color: 'white', fontSize: '4rem', fontWeight: '600' }}>Lottery</h1>
+                    <h1 className='color-white pop-font-weight pop-font-size4'>Lottery</h1>
                     <div className="breadcrumb-area">
                       <nav aria-label="breadcrumb">
                         <ol className="breadcrumb d-flex align-items-center">
@@ -58,16 +58,16 @@ const Lottery = () => {
               <div className="col-lg-10">
                 <div className="lottery-content">
                   <div className="section-text text-center">
-                    <h3 className="title" style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}>Weekly Lottery</h3>
+                    <h3 className="title pop-font-weight pop-font-size color-white">Weekly Lottery</h3>
                     <h5 className="sub-title">Game #379</h5>
                   </div>
                   <div className="prize-pool d-flex align-items-center justify-content-between">
-                    <div className="left-area" style={{ color: 'white' }}>
+                    <div className="left-area color-white">
                       <h5 className="sub-title xlr">Prize Pool</h5>
                       <h4>19.41146725 BTC</h4>
                       <p>143577 Tickets in Game</p>
                     </div>
-                    <div className="right-area text-center" style={{ color: 'white' }}>
+                    <div className="right-area text-center color-white">
                       <h6 className="sub-title">Lottery Draw Starts In:</h6>
                       <div className="countdown d-flex align-items-center">
                         <h5><span>0d {hours}h {minutes}m {seconds}s {ampm}</span></h5>
@@ -93,7 +93,7 @@ const Lottery = () => {
               <div className="col-lg-6">
                 <div className="section-header text-center">
                   <h5 className="sub-title">Latest Winners</h5>
-                  <h2 className="title" style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}>Latest Bets</h2>
+                  <h2 className="title pop-font-weight pop-font-size color-white">Latest Bets</h2>
                   <p>More and more winners are added every time! To locate the most recent winner's information</p>
                 </div>
               </div>
@@ -235,7 +235,7 @@ const Lottery = () => {
               <div className="col-lg-7">
                 <div className="section-header text-center">
                   <h5 className="sub-title">How it works</h5>
-                  <h2 className="title" style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}>It’s Really Easy!</h2>
+                  <h2 className="title pop-font-weight pop-font-size color-white">It’s Really Easy!</h2>
                   <p>It’s easier than you think.Follow 3 simple easy steps</p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ const Lottery = () => {
                     <img src={work1} alt="#" />
                   </div>
                   <div className="text-area">
-                    <h5 style={{ fontSize: '1.9rem', color: 'white' }}>Buy tickets</h5>
+                    <h5 className='pop-font-size8 color-white'>Buy tickets</h5>
                     <p>Buy ticket with ₹ 100, and choose numbers for ticket.</p>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ const Lottery = () => {
                     <img src={work2} alt="#" />
                   </div>
                   <div className="text-area">
-                    <h5 style={{ fontSize: '1.9rem', color: 'white' }}>Wait For the Draw</h5>
+                    <h5 className='pop-font-size8 color-white'>Wait For the Draw</h5>
                     <p>Wait for the draw at 15:00 UTC+0 daily.</p>
                   </div>
                 </div>
@@ -269,7 +269,7 @@ const Lottery = () => {
                     <img src={work3} alt="#" />
                   </div>
                   <div className="text-area">
-                    <h5 style={{ fontSize: '1.9rem', color: 'white' }}>Check For Prizes</h5>
+                    <h5 className='pop-font-size8 color-white'>Check For Prizes</h5>
                     <p>Once the draw is over,and check your prize.</p>
                   </div>
                 </div>
@@ -284,7 +284,7 @@ const Lottery = () => {
             <div className="row d-flex justify-content-center">
               <div className="col-lg-7">
                 <div className="section-header text-center">
-                  <h2 className="title" style={{ fontSize: '3rem', fontWeight: '600', color: 'white' }}>A Frequently Asked Questions</h2>
+                  <h2 className="title pop-font-weight pop-font-size color-white">A Frequently Asked Questions</h2>
                 </div>
               </div>
             </div>
@@ -293,9 +293,9 @@ const Lottery = () => {
                 <div className="accordion" id="accordionFaqs">
                   <div className="accordion-item">
                     <h6 className="accordion-header" id="headingOne">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      <button className="accordion-button collapsed color-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="false"
-                        aria-controls="collapseOne" style={{ color: 'white' }}>
+                        aria-controls="collapseOne">
                         What is mrx Lottery?
                       </button>
                     </h6>
@@ -308,9 +308,9 @@ const Lottery = () => {
                   </div>
                   <div className="accordion-item">
                     <h6 className="accordion-header" id="headingTwo">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      <button className="accordion-button collapsed color-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false"
-                        aria-controls="collapseTwo" style={{ color: 'white' }}>
+                        aria-controls="collapseTwo" >
                         How does mrx Lottery?
                       </button>
                     </h6>
@@ -323,9 +323,9 @@ const Lottery = () => {
                   </div>
                   <div className="accordion-item">
                     <h6 className="accordion-header" id="headingThree">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      <button className="accordion-button collapsed color-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false"
-                        aria-controls="collapseThree" style={{ color: 'white' }}>
+                        aria-controls="collapseThree" >
                         When Lottery start?
                       </button>
                     </h6>
@@ -338,9 +338,9 @@ const Lottery = () => {
                   </div>
                   <div className="accordion-item">
                     <h6 className="accordion-header" id="headingFour">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      <button className="accordion-button collapsed color-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="false"
-                        aria-controls="collapseFour" style={{ color: 'white' }}>
+                        aria-controls="collapseFour" >
                         How can participate in Lottery?
                       </button>
                     </h6>
@@ -353,9 +353,9 @@ const Lottery = () => {
                   </div>
                   <div className="accordion-item">
                     <h6 className="accordion-header" id="headingFive">
-                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      <button className="accordion-button collapsed color-white" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFive" aria-expanded="false"
-                        aria-controls="collapseFive" style={{ color: 'white' }}>
+                        aria-controls="collapseFive">
                         What is the prize?
                       </button>
                     </h6>

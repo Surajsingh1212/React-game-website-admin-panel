@@ -9,17 +9,43 @@ import axiosInstance from '../../api';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  // handle show password 
   const [showPassword, setShowPassword] = useState(false)
+  // Handle Form Validation 
+  const [validateError,setValidateError] = useState({
+    Email: '', Password: ''
+  })
+  const validateField=(fieldName,value)=>{
+    let errorMessage = ''
+    switch(fieldName){
+      case 'Email':
+      errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address':'';
+      break;
+      case 'Password':
+        errorMessage= value.length <= 8 ? 'Password must be at least 8 characters long':'';
+        break;
+      default:
+        break;
+    }
+    setValidateError({
+      ...validateError,
+      [fieldName]:errorMessage
+    })
+  }
+  // Handle Form data
   const [formData, setFormData] = useState({
     Email: '', Password: ''
   })
+  // Handle Input Change 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+    validateField(e.target.name,e.target.value)
   }
   const Navigate = useNavigate()
+  // Handle Form Submit 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!formData.Email || !formData.Password) {
@@ -46,8 +72,9 @@ const Login = () => {
           text: 'You can now Change in with your credentials.',
           confirmButtonColor: '#35bf08',
         })
-        // user local storage user data 
+        // user local storage user data and access tocken 
         localStorage.setItem('user',JSON.stringify(userLogin.data.UD))
+        localStorage.setItem('authToken',userLogin.data.access_token)
         Navigate('/admin/dashboard')
         setFormData({ Email: '', Password: '' })
       }
@@ -87,11 +114,13 @@ const Login = () => {
               <CiMail className='fs-3 color-white' />
               <input type="email" placeholder="Email" autoComplete='useremail' name='Email' onChange={handleInputChange} value={formData.Email} />
             </div>
+            {validateError.Email && <span className='color-red'>{validateError.Email}</span>}
             <div className="input-area d-flex align-items-center pop-font">
               <CiLock className='fs-3 color-white' />
               <input type={showPassword ? 'text' : 'password'} placeholder="Password" autoComplete='current-password' name='Password' onChange={handleInputChange} value={formData.Password} />
               <button className='toggle-password-button color-white fs-5' type='button' onClick={passwordTogglevisible}>{showPassword ? <IoEye /> : <FaEyeSlash />}</button>
             </div>
+            {validateError.Password && <span className='color-red'>{validateError.Password}</span>}
             <div className="checkbox-item d-flex justify-content-between">
               <label className="checkbox-single d-flex align-items-center">
                 <span className="content-area">

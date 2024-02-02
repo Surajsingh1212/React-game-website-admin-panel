@@ -24,7 +24,9 @@
     background-color: rgba(95, 55, 152, 0.2);
     padding-left: 20px;
 }
-
+.color-red{
+    color: red;
+}
 /* login page center div css end*/
 
 /* extra css start*/
@@ -41,6 +43,14 @@
     border-radius: 15px;
     cursor: pointer;
     overflow: hidden;
+}
+.admin-game-play-section-icon{
+    background-color: #e6497d;
+    color: white;
+    border-radius: 50%;
+    font-size: 50px;
+    cursor: pointer;
+
 }
 .pop-font{
     font-family: poppins;
@@ -66,9 +76,24 @@
 .pop-font-size6{
     font-size: 2.5rem;   
 }
+.pop-font-size7{
+    font-size: 2.4rem;   
+}
+.pop-font-size8{
+    font-size: 1.9rem;   
+}
+.pop-font-size9{
+    font-size: 3.3rem;
+}
 .pop-font-weight{
    font-weight: 600;
 }
+.pop-font-weigh2{
+    font-weight: 700;
+ }
+ .pop-font-weigh3{
+    font-weight: 550;
+ }
 .pop-font-weight1{
     font-weight: 400;
  }
@@ -78,6 +103,17 @@
     background-color: #201048;
     border-radius: 10px;
 }
+.admin-table-padding1{
+    padding: 12px 30px;
+}
+.admin-table-borderradius{
+    border-radius: 10px;
+}
+.admin-broder-rbg2{
+    background-color: #3a2372;
+    border-radius: 10px;
+    padding: 12px 30px;
+}
 .admin-toggle-password-button{
     position: absolute;
     top: 6px;
@@ -85,5 +121,6 @@
     background-color: transparent;
     color: white;
 }
+
 /* extra admin css end */
 

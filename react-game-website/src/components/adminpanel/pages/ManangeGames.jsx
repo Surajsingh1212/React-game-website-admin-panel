@@ -8,16 +8,16 @@ const onChange = (checked) => {
 const ManangeGames = () => {
   return (
     <>
-      <Row className='align-item-center d-flex mt-3  ' style={{ borderRadius: "10px", backgroundColor: '#201048', padding: '12px 30px' }}>
+      <Row className='align-item-center d-flex mt-3  admin-broder-rbg admin-table-padding1'>
         <div className="transaction-box">
           <div className="top-filter d-flex align-items-end">
-            <div className="single-filter" >
+            <div className="single-filter pop-font" >
               <p>Search By Name</p>
-              <input type="text" placeholder="Enter Name" style={{ fontFamily: 'poppins' }} />
+              <input type="text" placeholder="Enter Name"  />
             </div>
             <div className="single-filter">
               <p>Action</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>Active</option>
                 <option value="1" className='list'>Inactive</option>
@@ -25,7 +25,7 @@ const ManangeGames = () => {
             </div>
             <div className="single-filter">
               <p >Amount</p>
-              <select className='nice-select' style={{ fontFamily: 'poppins', color: 'white', borderRadius: '10px' }}>
+              <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
                 <option value="1" className='list'>High to Low</option>
                 <option value="2" className='list'>Low to High</option>
