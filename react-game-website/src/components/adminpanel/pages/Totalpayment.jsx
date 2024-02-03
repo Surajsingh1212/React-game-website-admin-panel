@@ -16,13 +16,13 @@ const Totalpayment = () => {
         </Flex>
       </Row>
       <Row className='align-item-center d-flex mt-3 admin-broder-rbg admin-table-padding1 '>
-        <div class="transaction-box">
-          <div class="top-filter d-flex align-items-end">
-            <div class="single-filter pop-font" >
+        <div className="transaction-box">
+          <div className="top-filter d-flex align-items-end">
+            <div className="single-filter pop-font" >
               <p>Month</p>
               <input type="text" placeholder="2023/01" />
             </div>
-            <div class="single-filter">
+            <div className="single-filter">
               <p>Type</p>
               <select className='nice-select pop-font color-white admin-table-borderradius' >
                 <option value="0" className='list'>All</option>
@@ -31,7 +31,7 @@ const Totalpayment = () => {
                 <option value="3" className='list'>Type 3</option>
               </select>
             </div>
-            <div class="single-filter">
+            <div className="single-filter">
               <p >Currency</p>
               <select className='nice-select pop-font color-white admin-table-borderradius'>
                 <option value="0" className='list'>All</option>
@@ -41,11 +41,11 @@ const Totalpayment = () => {
               </select>
             </div>
             <div>
-              <button class="filter-btn">Filter</button>
+              <button className="filter-btn">Filter</button>
             </div>
           </div>
-          <div class="table-responsive mt-4">
-            <table class="table">
+          <div className="table-responsive mt-4">
+            <table className="table">
               <thead>
                 <tr>
                   <th>Date/Time</th>

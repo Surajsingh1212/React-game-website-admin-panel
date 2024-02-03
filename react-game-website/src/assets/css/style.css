@@ -539,6 +539,7 @@ label {
   align-items: center;
   justify-content: center;
   color: var(--para-alt-color);
+  cursor: pointer;
 }
 .cmn-btn img, .cmn-btn i {
   margin-left: 10px;

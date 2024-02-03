@@ -24,8 +24,8 @@ const Header = () => {
   const menuItems = [
     { label: 'Home', to: '/', exact: true },
     { label: 'Games', to: '/games', exact: true },
-    { label: 'Tournament', to: '/tournament', exact: true },
     { label: 'Lottery', to: '/lottery', exact: true },
+    { label: 'Game Rules', to: '/gamerules', exact: true },
     { label: 'About', to: '/about', exact: true },
     { label: 'Contact', to: '/contact', exact: true },
   ];

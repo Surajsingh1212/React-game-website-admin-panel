@@ -31,7 +31,7 @@ const Signup = () => {
         errorMessage= !/^\d{10,}$/.test(value) ? 'Invalid mobile number':'';
         break;
       case 'Password':
-        errorMessage= value.length <= 8 ? 'Password must be at least 8 characters long':'';
+        errorMessage= value.length <= 7 ? 'Password must be at least 8 characters long':'';
         break;
       case 'CPassword':
         errorMessage= value !==formData.Password ? 'Passwords do not match':'';

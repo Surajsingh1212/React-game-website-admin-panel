@@ -11,7 +11,6 @@ import { GiPodiumWinner } from "react-icons/gi";
 import { GoBellFill } from "react-icons/go";
 import { IoGameController } from "react-icons/io5";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import { SiGoogletagmanager } from "react-icons/si";
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Smbrand from '../../../assets/images/icon-1.png';
 import Brand from '../../../assets/images/logo2.png';
@@ -66,6 +65,7 @@ const FullLayout = () => {
       Navigate(key);
     }
   };
+  //header user icon click menu items 
   const hoverMenu = (
     <Menu onClick={handleMenuClick}>
       {hoverItem.map(item => (
@@ -94,6 +94,72 @@ const FullLayout = () => {
     }
 
   }, [])
+
+  // defined user based menu item 
+  const userdetails  = JSON.parse(localStorage.getItem('user'));
+  const isAdmin  = userdetails?.Email === 'mrx@gmail.com' && userdetails?.MemberId === 'hpoTowNTzvNX8Y18dVcN/g==';
+  // menu items for admin login
+  const adminMenuItems=[
+    {
+      key: 'dashboard',
+      icon: <AiOutlineDashboard className='fs-4' />,
+      label: 'Dashboard ',
+    },
+    {
+      key: 'games',
+      icon: <IoGameController className='fs-4' />,
+      label: 'Games',
+    },
+    {
+      key: 'managelottery',
+      icon: <GiPodiumWinner className='fs-4' />,
+      label: 'Lottery',
+    },
+    {
+      key: 'managegames',
+      icon: <IoGameController className='fs-4' />,
+      label: 'Games',
+    },
+    {
+      key: 'manageusers',
+      icon: <FaUserPlus className='fs-4' />,
+      label: 'Users',
+    },
+    {
+      key: 'invoice',
+      icon: <FaFileInvoice className='fs-4' />,
+      label: 'Invoice',
+    }
+  ]
+  // menu item for user login
+  const userMenuItems=[
+    {
+      key: 'games',
+      icon: <IoGameController className='fs-4' />,
+      label: 'Games',
+    },
+    {
+      key: 'lottery ',
+      icon: <GiPodiumWinner className='fs-4' />,
+      label: 'Lottery ',
+    },
+    {
+      key: 'addpayment',
+      icon: <RiSecurePaymentFill className='fs-4' />,
+      label: 'Deposit',
+    },
+    {
+      key: 'withdrawpayment',
+      icon: <FaMoneyCheck className='fs-4' />,
+      label: 'Withdraw',
+    },
+    {
+      key: 'totalpayment',
+      icon: <FaFileInvoice className='fs-4' />,
+      label: 'History',
+    },
+
+  ]
   return (
     <>
       <Layout>
@@ -110,77 +176,6 @@ const FullLayout = () => {
               {collapsed ? <img src={Smbrand} height='50px' alt='Brand' /> : <img src={Brand} height='50px' alt='Brand' />}
             </div>
             <Menu
-              theme="trasnparent"
-              mode="inline"
-              defaultSelectedKeys={['']}
-              onClick={({ key }) => {
-                if (key === "signout") {
-                }
-                else {
-                  Navigate(key);
-                }
-              }}
-              items={[
-                {
-                  key: 'dashboard',
-                  icon: <AiOutlineDashboard className='fs-4' />,
-                  label: 'Dashboard ',
-                },
-                {
-                  key: 'lottery ',
-                  icon: <GiPodiumWinner className='fs-4' />,
-                  label: 'Lottery ',
-                },
-                {
-                  key: 'games',
-                  icon: <IoGameController className='fs-4' />,
-                  label: 'Games',
-
-                },
-                {
-                  key: 'invoice',
-                  icon: <FaFileInvoice className='fs-4' />,
-                  label: 'Invoice',
-                },
-                {
-                  key: 'addpayment',
-                  icon: <RiSecurePaymentFill className='fs-4' />,
-                  label: 'Add Payment',
-                },
-                {
-                  key: 'withdrawpayment',
-                  icon: <FaMoneyCheck className='fs-4' />,
-                  label: 'Withdraw Payment',
-                },
-                {
-                  key: 'totalpayment',
-                  icon: <FaFileInvoice className='fs-4' />,
-                  label: 'Total Payment',
-                },
-                {
-                  key: 'managelottery',
-                  icon: <GiPodiumWinner className='fs-4' />,
-                  label: 'Manage Lottery',
-                },
-                {
-                  key: 'manageusers',
-                  icon: <FaFileInvoice className='fs-4' />,
-                  label: 'Manage Users',
-                },
-                {
-                  key: 'managegames',
-                  icon: <IoGameController className='fs-4' />,
-                  label: 'Manage Games',
-                }
-              ]} />
-
-          </Sider>
-        ) : (
-          <Sider trigger={null} collapsible collapsed={collapsed} width={200} style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0, }}>
-            <div className="demo-logo-vertical pt-1">
-              {collapsed ? <img src={Smbrand} height='50px' alt='Brand' /> : <img src={Brand} height='50px' alt='Brand' />}
-            </div>
-            <Menu
               theme="transparent"
               mode="inline"
               defaultSelectedKeys={['']}
@@ -191,73 +186,41 @@ const FullLayout = () => {
                   Navigate(key);
                 }
               }}
-              items={[
-                {
-                  key: 'dashboard',
-                  icon: <AiOutlineDashboard className='fs-4' />,
-                  label: 'Dashboard ',
-                },
-                {
-                  key: 'lottery ',
-                  icon: <GiPodiumWinner className='fs-4' />,
-                  label: 'Lottery ',
-                },
-                {
-                  key: 'games',
-                  icon: <IoGameController className='fs-4' />,
-                  label: 'Games',
+              items={isAdmin ? adminMenuItems : userMenuItems} />
 
-                },
-                {
-                  key: 'payment',
-                  icon: <RiSecurePaymentFill className='fs-4' />,
-                  label: 'Payments',
-                  children: [
-                    {
-                      key: 'addpayment',
-                      icon: <RiSecurePaymentFill className='fs-4' />,
-                      label: 'Deposit',
-                    },
-                    {
-                      key: 'withdrawpayment',
-                      icon: <FaMoneyCheck className='fs-4' />,
-                      label: 'Withdraw',
-                    },
-                    {
-                      key: 'totalpayment',
-                      icon: <FaFileInvoice className='fs-4' />,
-                      label: 'History',
-                    }
-                  ]
-                },
-                {
-                  key: '',
-                  icon: <SiGoogletagmanager className='fs-4' />,
-                  label: 'Manage',
-                  children: [
-                    {
-                      key: 'managelottery',
-                      icon: <GiPodiumWinner className='fs-4' />,
-                      label: 'Lottery',
-                    },
-                    {
-                      key: 'managegames',
-                      icon: <IoGameController className='fs-4' />,
-                      label: 'Games',
-                    },
-                    {
-                      key: 'manageusers',
-                      icon: <FaUserPlus className='fs-4' />,
-                      label: 'Users',
-                    },
-                  ]
-                },
-                {
-                  key: 'invoice',
-                  icon: <FaFileInvoice className='fs-4' />,
-                  label: 'Invoice',
-                }
-              ]} />
+          </Sider>
+        ) : (
+          <Sider trigger={null} collapsible collapsed={collapsed} width={200} style={{ overflow: 'auto', height: '100vh', position: 'sticky', top: 0, left: 0, }}>
+            <div className="demo-logo-vertical pt-1">
+              {collapsed ? <img src={Smbrand} height='50px' alt='Brand' /> : <img src={Brand} height='50px' alt='Brand' />}
+            </div>
+           {isAdmin ? (
+            <Menu
+            theme="transparent"
+            mode="inline"
+            defaultSelectedKeys={['']}
+            onClick={({ key }) => {
+              if (key === "signout") {
+              }
+              else {
+                Navigate(key);
+              }
+            }}
+            items={adminMenuItems}/>
+           ):(
+            <Menu
+            theme="transparent"
+            mode="inline"
+            defaultSelectedKeys={['']}
+            onClick={({ key }) => {
+              if (key === "signout") {
+              }
+              else {
+                Navigate(key);
+              }
+            }}
+            items={userMenuItems}/>
+           )}
           </Sider>
         )}
 

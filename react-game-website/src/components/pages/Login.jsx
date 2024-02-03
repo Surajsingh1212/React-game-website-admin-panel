@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { CiLock, CiMail } from "react-icons/ci";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
-import { IoEye } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { IoEye } from "react-icons/io5";
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axiosInstance from '../../api';
-import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   // handle show password 
@@ -22,7 +21,7 @@ const Login = () => {
       errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address':'';
       break;
       case 'Password':
-        errorMessage= value.length <= 8 ? 'Password must be at least 8 characters long':'';
+        errorMessage= value.length <= 7 ? 'Password must be at least 8 characters long':'';
         break;
       default:
         break;
@@ -75,7 +74,16 @@ const Login = () => {
         // user local storage user data and access tocken 
         localStorage.setItem('user',JSON.stringify(userLogin.data.UD))
         localStorage.setItem('authToken',userLogin.data.access_token)
-        Navigate('/admin/dashboard')
+
+        // redirect bassed on the user login
+        const userEmail = userLogin.data.UD?.Email
+        const userMemberId = userLogin.data.UD?.MemberId
+        if(userEmail==='mrx@gmail.com' && userMemberId==='hpoTowNTzvNX8Y18dVcN/g=='){
+          Navigate('/admin/dashboard')
+        }
+        else{
+          Navigate('/admin/games')
+        }
         setFormData({ Email: '', Password: '' })
       }
       else {
@@ -110,7 +118,7 @@ const Login = () => {
               <h3 className="title pt-2 color-white pop-font-size6">Welcome Back</h3>
               <p>Not a member ? <Link to="/signup" className="reg-btn link" style={{ color: '#a1ff00' }}>Register</Link></p>
             </div>
-            <div className="input-area d-flex align-items-center pop-font">
+            <div className="input-area  d-flex align-items-center pop-font">
               <CiMail className='fs-3 color-white' />
               <input type="email" placeholder="Email" autoComplete='useremail' name='Email' onChange={handleInputChange} value={formData.Email} />
             </div>

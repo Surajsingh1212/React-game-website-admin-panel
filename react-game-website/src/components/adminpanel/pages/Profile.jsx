@@ -7,6 +7,7 @@ import ProfileAvatar from '../../../assets/images/table-image-5.png';
 const Profile = () => {
   // get data from localstorage 
   const userData = JSON.parse(localStorage.getItem('user'))
+
   // Handle Form Validation 
   const [validateError, setValidateError] = useState({
     Name: '', Email: '', Mobile: ''
@@ -116,7 +117,7 @@ const Profile = () => {
   }
   return (
     <Container>
-      <Row>
+      <Row className='d-flex align-item-center'>
         <Col className="order-xl-2 mb-5 mb-xl-0 admin-broder-rbg" xl="4">
           <Row className="justify-content-center mt-5">
             <Col className="order-lg-2" lg="3">
@@ -143,7 +144,9 @@ const Profile = () => {
             </Col>
           </Row>
         </Col>
-        <Col className="order-xl-1" xl="8">
+        {/*handle admin login if admin show block the this section */}
+        {userData.Email==='mrx@gmail.com' && userData.MemberId==='hpoTowNTzvNX8Y18dVcN/g==' ? '':(
+          <Col className="order-xl-1" xl="8">
           <Row className="align-items-center">
             <Col>
               <h3 className="mb-0 color-white">My account</h3>
@@ -187,6 +190,7 @@ const Profile = () => {
             </Col>
           </Row>
         </Col>
+        )}
       </Row>
     </Container>
   )
