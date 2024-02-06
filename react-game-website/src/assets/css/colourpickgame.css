@@ -38,5 +38,28 @@
     background-color: #2a1758;
     color: white;
 }
+.admin-game-rules{
+    cursor: pointer;
+    text-align: center;
+    color: white;
+}
 
+.ant-modal-content{
+    background-color: #3a2372 !important;
+    color: white !important;
+}
+.ant-modal-header{
+    background-color: #3a2372 !important;
+}
+.ant-modal-title{
+    color: white !important;
+}
+.ant-modal-close{
+    border-radius: 5px !important;
+    background-color: #2a1758 !important;
+    color: white !important;
+}
+.ant-modal-footer{
+    display: none !important;
+}
 /* colour pick ui end */

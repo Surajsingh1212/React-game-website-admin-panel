@@ -1,9 +1,8 @@
-import { Flex } from 'antd';
-import React, { useState, useEffect } from 'react';
-import ConfettiExplosion from 'react-confetti-explosion';
+import { Flex, Modal } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { FaPlus } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa";
+import Swal from 'sweetalert2';
+import { FaMinus, FaPlus } from "react-icons/fa";
 import '../../../assets/css/colourpickgame.css';
 import voilet from '../../../assets/images/colourpick/Violet.png';
 import blue from '../../../assets/images/colourpick/blue.png';
@@ -19,13 +18,20 @@ const ColorpickGame = () => {
     const [userBalance, setUserBalance] = useState(100);
     const [companyBalance, setCompanyBalance] = useState(1000);
     const [betAmount, setBetAmount] = useState(0);
-    const [message, setMessage] = useState('');
     const [secondsLeft, setSecondsLeft] = useState(59);
     const [isGameRunning, setIsGameRunning] = useState(true);
-    const [betCounter, setBetCounter] = useState(0);
     const [hasPlacedBet, setHasPlacedBet] = useState(false);
-    const [isExploading, setIsExploading] = useState(false);
-    const [numberOfBet,setNumberOfBet] = useState(0)
+    const [numberOfBet, setNumberOfBet] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    // last six winner images 
+    const [lastSixWinners, setLastSixWinners] = useState([
+        winvoilet,
+        winblue,
+        winred,
+        winvoilet,
+        winblue,
+        winred,
+    ])
 
     useEffect(() => {
         // Set up an interval to call restartGame every 1 minute
@@ -45,7 +51,6 @@ const ColorpickGame = () => {
                     } else {
                         clearInterval(timer);
                         setIsGameRunning(false);
-                        setIsExploading(true);
                         return 0;
                     }
                 });
@@ -61,20 +66,26 @@ const ColorpickGame = () => {
         setResult(null);
         setUserBet('');
         setBetAmount(0);
-        setMessage('');
         setHasPlacedBet(false); // Allow placing bet again in the new round
-        setIsExploading(false);
         setNumberOfBet(0)
     };
 
     const drawLotteryResult = () => {
         const randomResult = Math.floor(Math.random() * 10);
         setResult(randomResult);
+        //console.log(randomResult)
+        // last six winner 
+        setLastSixWinners(prevWinners => {
+            const newWinners = [...prevWinners]
+            newWinners.shift();
+            newWinners.push(getWinnerImg(userBet, randomResult));
+            return newWinners;
+        })
     };
 
     //handle click
     const handleBet = () => {
-        if (!hasPlacedBet && secondsLeft > 0 && secondsLeft <= 54) {
+        if (!hasPlacedBet && secondsLeft > 0) {
             // User can only place a bet once in the first 54 seconds
             setHasPlacedBet(true);
 
@@ -82,23 +93,28 @@ const ColorpickGame = () => {
             const minBetAmount = 10;
 
             if (!isNumeric || betAmount < minBetAmount) {
-                setMessage(`Please enter a valid bet amount (minimum ${minBetAmount} rupees).`);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Bet Amount',
+                    text: `Please enter a valid bet amount (minimum ${minBetAmount} rupees).`,
+                });
                 return;
             }
 
             if (userBalance < betAmount) {
-                setMessage('Insufficient balance. Please add more funds.');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Insufficient Balance',
+                    text: 'Please add more funds to your account.',
+                });
                 return;
             }
 
             setUserBalance((prevBalance) => prevBalance - betAmount);
-            setBetCounter((prevCount) => prevCount + 1);
-
             drawLotteryResult();
 
             const calculatedBetAmount = betAmount;
             let winnings = 0;
-
             switch (userBet) {
                 case 'BLUE':
                     if ([1, 3, 7, 9].includes(result)) {
@@ -120,7 +136,11 @@ const ColorpickGame = () => {
                     }
                     break;
                 default:
-                    setMessage('Invalid bet selection.');
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Bet Selection',
+                        text: 'Please select a valid color to bet on.',
+                    });
                     return;
             }
 
@@ -130,14 +150,55 @@ const ColorpickGame = () => {
             } else {
                 setCompanyBalance((prevBalance) => prevBalance + calculatedBetAmount);
             }
-
             setBetAmount(0);
-            setMessage(`You ${winnings > 0 ? 'won ' + winnings + ' rupees' : 'lost ' + calculatedBetAmount + ' rupees'}.`);
+            Swal.fire({
+                icon: winnings > 0 ? 'success' : 'error',
+                title: winnings > 0 ? 'Congratulations!' : 'Better luck next time!',
+                text: winnings > 0 ? `You won ${winnings} rupees.` : `You lost ${calculatedBetAmount} rupees.`,
+            });
         } else {
-            setMessage('You can place a bet only once in the first 54 seconds.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Cannot Place Bet',
+                text: 'You can place a bet only once in the first 54 seconds.',
+            });
         }
     };
-
+    // last six winner get image 
+    const getWinnerImg = (userBet, result) => {
+        let winnerImg = null;
+        switch (userBet) {
+            case 'BLUE':
+                if ([1, 3, 7, 9].includes(result)) {
+                    winnerImg = winblue;
+                }
+                else if (result === 5) {
+                    winnerImg = winblue;
+                }
+                break;
+            case 'RED':
+                if ([2, 4, 6, 8].includes(result)) {
+                    winnerImg = winred;
+                }
+                else if (result === 0) {
+                    winnerImg = winred;
+                }
+                break;
+            case 'VIOLET':
+                if ([0, 5].includes(result)) {
+                    winnerImg = winvoilet;
+                }
+                break;
+            default:
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Bet Selection',
+                    text: 'Please select a valid color to bet on.',
+                });
+                break;
+        }
+        return winnerImg;
+    }
     const increaseBetAmount = () => {
         setBetAmount((prevAmount) => prevAmount + 10);
         updateNumberOfBet();
@@ -149,9 +210,28 @@ const ColorpickGame = () => {
             updateNumberOfBet();
         }
     };
-    const updateNumberOfBet=()=>{
-        const numberOfBet = Math.floor(betAmount/10);
-        setNumberOfBet(numberOfBet) 
+    const updateNumberOfBet = () => {
+        const numberOfBet = Math.floor(betAmount / 10);
+        setNumberOfBet(numberOfBet)
+    }
+    // hanle rules modal
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+    // get current period on bassed year
+    const getCurrentPeroid = () => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear().toString().slice(-4);
+        const month = ('0' + (currentDate.getMonth() + 1)).slice(-2);
+        const day = ('0' + currentDate.getDate()).slice(-2);
+        const gameCount = ('0000' + secondsLeft).slice(-4);
+        return `${year}${month}${day}${gameCount}`
     }
     return (
         <>
@@ -164,7 +244,6 @@ const ColorpickGame = () => {
                                     <span>Total Balance : ₹ {userBalance} </span>
                                 </div>
                             </Flex>
-                            <p>Current result:  {result}</p>
                         </Row>
                         <Row>
                             <Col>
@@ -180,7 +259,7 @@ const ColorpickGame = () => {
                         <Row>
                             <Col>
                                 <label htmlFor="nbet">Number of Bet</label>
-                                <input type='number' readOnly id='nbet' value={numberOfBet}/>
+                                <input type='number' readOnly id='nbet' value={numberOfBet} />
                             </Col>
                         </Row>
                         <Row>
@@ -200,43 +279,114 @@ const ColorpickGame = () => {
                                 <button className='shadow-lg filter-btn w-100' onClick={handleBet} disabled={secondsLeft <= 6 || !isGameRunning}>Bet </button>
                             </Col>
                             <Col>
-                                {secondsLeft === 0 && !isGameRunning && (
-                                    <>
-                                        <button onClick={restartGame}>Restart Game</button>
-                                        {isExploading && <ConfettiExplosion duration={3000} particleCount={100} />}
-                                    </>
-                                )}
+                                {secondsLeft === 0 && !isGameRunning && <button onClick={restartGame}>Restart Game</button>}
                             </Col>
                         </Row>
-                        {/*showing a message */}
-                        <p>{message}</p>
+                        {/*showing a rules span */}
+                        <div className='row text-center'>
+                            <span onClick={showModal} className='admin-game-rules'>Game Rules</span>
+                        </div>
+
+                        {/*showing a rules content */}
+                        <Modal title="About Colour Pick Game" width={600} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+                            <p>1 minutes 1 issue,54 seconds to order,6 seconds to show the lottery result. It opens all day. The total number of trade is 1440 issues. </p>
+                            <p>If you spend 100 rupees to trade,after deducting 2 rupees service fee,your contract amount is 98 rupees:</p>
+                            <p><b>JOIN BLUE :</b>  if the result shows 1,3,7,9,you will get (98*2) 196 rupees;If the result shows 5,you will get (98*1.5) 147 rupees.</p>
+                            <p><b>JOIN RED :</b>  if the result shows 2,4,6,8,you will get (98*2) 196 rupees;If the result shows 0,you will get (98*1.5) 147 rupees.</p>
+                            <p><b>JOIN VIOLET :</b>  if the result shows 0 or 5,you will get (98*4.5) 441 rupees.</p>
+                            <div className="table-responsive">
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Select </th>
+                                            <th>Result</th>
+                                            <th>Multiplier</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <p>Join Blue</p>
+                                            </th>
+                                            <td>
+                                                <p>1,3,7,9</p>
+                                                <p>5</p>
+                                            </td>
+                                            <td>
+                                                <p>2</p>
+                                                <p>1.5</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <p>Join Red</p>
+                                            </th>
+                                            <td>
+                                                <p>2,4,6,8</p>
+                                                <p>0</p>
+                                            </td>
+                                            <td>
+                                                <p>2</p>
+                                                <p>1.5</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <p>Join Violet</p>
+                                            </th>
+                                            <td>
+                                                <p>0,5</p>
+                                            </td>
+                                            <td>
+                                                <p>4.5</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <p>Number</p>
+                                            </th>
+                                            <td>
+                                                <p>n</p>
+                                            </td>
+                                            <td>
+                                                <p>9</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </Modal>
+                        <p>Current result:  {result}</p>
+                        <p>Company Balance:  {companyBalance}</p>
                     </div>
                     <div className='col-md-1 col-xl-1 col-sm-1'></div>
                     <div className='col-md-7 col-xl-7 col-sm-6' style={{ backgroundColor: '#3a2372', padding: '12px 30px', borderRadius: '10px' }}>
-                        <Row className='align-item-center d-flex p-4'>
-                            <Flex justify='space-between'>
+                        <Row className='align-item-center d-flex p-4 mb-3'>
+                            <Col className='col-sm-12 pt-4' lg='6'>
                                 <div>
                                     <div className='color-white'>
                                         <h4>Period</h4>
-                                        <h3>202402050658</h3>
+                                        <h3>{getCurrentPeroid()}</h3>
                                     </div>
                                 </div>
+                            </Col>
+                            <Col className='col-sm-12 pt-4' lg='6'>
                                 <div>
                                     <div className='color-white'>
                                         <h4>Count Down</h4>
                                         <div>
-                                            <div className='rightSection'>
-                                                <div className='d-flex align-item-center'>
+                                            <div className='rightSection text-center'>
+                                                <div className='d-flex align-item-center text-center'>
                                                     <div className='counter-box-colourpick'>0</div>&nbsp;
                                                     <div className='counter-box-colourpick'>0</div>&nbsp; <span> : </span> &nbsp;
-                                                    <div className='counter-box-colourpick'>0</div>&nbsp;
-                                                    <div className='counter-box-colourpick'>{secondsLeft}</div>
+                                                    <div className='counter-box-colourpick'>{Math.floor(secondsLeft / 10)}</div>&nbsp;
+                                                    <div className='counter-box-colourpick'>{secondsLeft % 10}</div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </Flex>
+                            </Col>
                         </Row>
                         <Row>
                             <div className='d-flex align-item-center justify-content-center'>
@@ -259,30 +409,18 @@ const ColorpickGame = () => {
                                 <h3 className='color-white'>Latest Winner</h3>
                             </Col>
                         </Row>
-                        <Row>
+                        {/*show the latest six winner */}
+                        <Row className='pt-3'>
                             <div className='d-flex align-item-center justify-content-center'>
                                 <div className='d-flex'>
-                                    <div>
-                                        <img src={winvoilet} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={winblue} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={winred} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={winvoilet} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={winblue} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={winred} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
-                                    <div>
-                                        <img src={waiting} alt='colouricons' className='colourpick-game-latestwin-image' />
-                                    </div>
+                                    {lastSixWinners.map((winner, index) => (
+                                        <div key={index}>
+                                            <img src={winner} alt={`winner-${index}`} className='colourpick-game-latestwin-image' />
+                                        </div>
+                                    ))}
+                                </div>
+                                <div>
+                                    <img src={waiting} alt='colouricons' className='colourpick-game-latestwin-image' />
                                 </div>
                             </div>
                         </Row>
