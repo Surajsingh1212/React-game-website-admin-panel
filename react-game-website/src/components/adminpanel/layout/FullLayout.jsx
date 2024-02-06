@@ -4,12 +4,12 @@ import {
 } from '@ant-design/icons';
 import { Button, Dropdown, Layout, Menu, theme } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { AiOutlineDashboard } from "react-icons/ai";
-import { FaFileInvoice, FaUserPlus } from "react-icons/fa";
+import { FaFileInvoice } from "react-icons/fa";
 import { FaMoneyCheck } from "react-icons/fa6";
-import { GiPodiumWinner } from "react-icons/gi";
-import { GoBellFill } from "react-icons/go";
+import { GiPodiumWinner, GiWallet } from "react-icons/gi";
 import { IoGameController } from "react-icons/io5";
+import { MdOutlineAccountBalanceWallet } from "react-icons/md";
+import { PiUserSwitchFill } from "react-icons/pi";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Smbrand from '../../../assets/images/icon-1.png';
@@ -94,45 +94,8 @@ const FullLayout = () => {
     }
 
   }, [])
-
-  // defined user based menu item 
-  const userdetails  = JSON.parse(localStorage.getItem('user'));
-  const isAdmin  = userdetails?.Email === 'mrx@gmail.com' && userdetails?.MemberId === 'hpoTowNTzvNX8Y18dVcN/g==';
-  // menu items for admin login
-  const adminMenuItems=[
-    {
-      key: 'dashboard',
-      icon: <AiOutlineDashboard className='fs-4' />,
-      label: 'Dashboard ',
-    },
-    {
-      key: 'games',
-      icon: <IoGameController className='fs-4' />,
-      label: 'Games',
-    },
-    {
-      key: 'managelottery',
-      icon: <GiPodiumWinner className='fs-4' />,
-      label: 'Lottery',
-    },
-    {
-      key: 'managegames',
-      icon: <IoGameController className='fs-4' />,
-      label: 'Games',
-    },
-    {
-      key: 'manageusers',
-      icon: <FaUserPlus className='fs-4' />,
-      label: 'Users',
-    },
-    {
-      key: 'invoice',
-      icon: <FaFileInvoice className='fs-4' />,
-      label: 'Invoice',
-    }
-  ]
   // menu item for user login
-  const userMenuItems=[
+  const userMenuItems = [
     {
       key: 'games',
       icon: <IoGameController className='fs-4' />,
@@ -157,6 +120,16 @@ const FullLayout = () => {
       key: 'totalpayment',
       icon: <FaFileInvoice className='fs-4' />,
       label: 'History',
+    },
+    {
+      key: 'fundconversion',
+      icon: <GiWallet className='fs-4' />,
+      label: 'Funds',
+    },
+    {
+      key: 'referrals',
+      icon: <PiUserSwitchFill  className='fs-4' />,
+      label: 'referrals',
     },
 
   ]
@@ -186,7 +159,7 @@ const FullLayout = () => {
                   Navigate(key);
                 }
               }}
-              items={isAdmin ? adminMenuItems : userMenuItems} />
+              items={userMenuItems} />
 
           </Sider>
         ) : (
@@ -194,33 +167,19 @@ const FullLayout = () => {
             <div className="demo-logo-vertical pt-1">
               {collapsed ? <img src={Smbrand} height='50px' alt='Brand' /> : <img src={Brand} height='50px' alt='Brand' />}
             </div>
-           {isAdmin ? (
             <Menu
-            theme="transparent"
-            mode="inline"
-            defaultSelectedKeys={['']}
-            onClick={({ key }) => {
-              if (key === "signout") {
-              }
-              else {
-                Navigate(key);
-              }
-            }}
-            items={adminMenuItems}/>
-           ):(
-            <Menu
-            theme="transparent"
-            mode="inline"
-            defaultSelectedKeys={['']}
-            onClick={({ key }) => {
-              if (key === "signout") {
-              }
-              else {
-                Navigate(key);
-              }
-            }}
-            items={userMenuItems}/>
-           )}
+              theme="transparent"
+              mode="inline"
+              defaultSelectedKeys={['']}
+              onClick={({ key }) => {
+                if (key === "signout") {
+                }
+                else {
+                  Navigate(key);
+                }
+              }}
+              items={userMenuItems} />
+
           </Sider>
         )}
 
@@ -233,7 +192,6 @@ const FullLayout = () => {
               background: colorBgContainer,
             }}
           >
-
             <Button
               type="text"
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -255,7 +213,10 @@ const FullLayout = () => {
 
             <div className='d-flex gap-3 align-item-center'>
               <div className='position-relative'>
-                <GoBellFill className=" align-item-center fs-2 p-2" style={{ backgroundColor: '#2e1b5d', borderRadius: '5px' }} />
+                <div> <MdOutlineAccountBalanceWallet className=" align-item-center fs-2 p-2 admin-wallet-icons" /><span className='p-2 '>2331.00</span></div>
+              </div>
+              <div className='position-relative'>
+                <div><GiWallet className=" align-item-center fs-2 p-2 admin-wallet-icons" /><span className='p-2'>6531.00</span></div>
               </div>
 
               <div className="d-flex gap-3 align-item-center">

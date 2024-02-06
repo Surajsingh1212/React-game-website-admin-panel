@@ -122,4 +122,10 @@
     border-color: transparent;
   }
 
-  
+  /* Wallet icons design */
+  .admin-wallet-icons{
+    background-color: #2e1b5d;
+    border-radius: 5px;
+  }
+
+ 

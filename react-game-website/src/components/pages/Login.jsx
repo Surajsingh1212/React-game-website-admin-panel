@@ -6,29 +6,32 @@ import { IoEye } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axiosInstance from '../../api';
+import {FadeLoader} from 'react-spinners'
 
 const Login = () => {
   // handle show password 
   const [showPassword, setShowPassword] = useState(false)
+  // loading api respobse
+  const [loading, setLoading] = useState(false)
   // Handle Form Validation 
-  const [validateError,setValidateError] = useState({
+  const [validateError, setValidateError] = useState({
     Email: '', Password: ''
   })
-  const validateField=(fieldName,value)=>{
+  const validateField = (fieldName, value) => {
     let errorMessage = ''
-    switch(fieldName){
+    switch (fieldName) {
       case 'Email':
-      errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address':'';
-      break;
+        errorMessage = !/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(value) ? 'Invalid Email Address' : '';
+        break;
       case 'Password':
-        errorMessage= value.length <= 7 ? 'Password must be at least 8 characters long':'';
+        errorMessage = value.length <= 7 ? 'Password must be at least 8 characters long' : '';
         break;
       default:
         break;
     }
     setValidateError({
       ...validateError,
-      [fieldName]:errorMessage
+      [fieldName]: errorMessage
     })
   }
   // Handle Form data
@@ -41,12 +44,13 @@ const Login = () => {
       ...formData,
       [e.target.name]: e.target.value,
     })
-    validateField(e.target.name,e.target.value)
+    validateField(e.target.name, e.target.value)
   }
   const Navigate = useNavigate()
   // Handle Form Submit 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true);
     if (!formData.Email || !formData.Password) {
       Swal.fire({
         icon: 'error',
@@ -72,18 +76,9 @@ const Login = () => {
           confirmButtonColor: '#35bf08',
         })
         // user local storage user data and access tocken 
-        localStorage.setItem('user',JSON.stringify(userLogin.data.UD))
-        localStorage.setItem('authToken',userLogin.data.access_token)
-
-        // redirect bassed on the user login
-        const userEmail = userLogin.data.UD?.Email
-        const userMemberId = userLogin.data.UD?.MemberId
-        if(userEmail==='mrx@gmail.com' && userMemberId==='hpoTowNTzvNX8Y18dVcN/g=='){
-          Navigate('/admin/dashboard')
-        }
-        else{
-          Navigate('/admin/games')
-        }
+        localStorage.setItem('user', JSON.stringify(userLogin.data.UD))
+        Navigate('/admin/games')
+        setLoading(false);
         setFormData({ Email: '', Password: '' })
       }
       else {
@@ -93,8 +88,9 @@ const Login = () => {
           text: 'Enter correct login creadentials. Please try again.',
           confirmButtonColor: '#35bf08',
         })
+        setLoading(false)
       }
-      
+
     }
     catch (error) {
       console.error("Login Error", error)
@@ -104,6 +100,7 @@ const Login = () => {
         text: 'There was an internal server error. Please try again later.',
         confirmButtonColor: '#35bf08',
       })
+      setLoading(false);
     }
   }
   const passwordTogglevisible = () => {
@@ -143,10 +140,12 @@ const Login = () => {
               </label>
               <p><Link to='#' className='link color-white'>Forget Password</Link></p>
             </div>
+           
             <div className="btn-area text-center">
-              <div className="cmn-btn mt-4 link" onClick={handleSubmit}>Login
-                <FaArrowRightLong className='ms-2' />
-              </div>
+           {/* {loading &&( <div className="loader"><FadeLoader color="#2fbc08" /></div>)}*/} 
+                <div className="cmn-btn mt-4 link" onClick={handleSubmit}>Login
+                 <FaArrowRightLong className='ms-2' />
+                </div>
             </div>
           </form>
         </div>

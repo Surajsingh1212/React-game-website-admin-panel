@@ -7,13 +7,9 @@ import Addpyment from './components/adminpanel/pages/Addpyment';
 import AdminGames from './components/adminpanel/pages/AdminGames';
 import AdminLottery from './components/adminpanel/pages/AdminLottery';
 import Changepassword from './components/adminpanel/pages/Changepassword';
-import Createlottery from './components/adminpanel/pages/Createlottery';
-import Createuser from './components/adminpanel/pages/Createuser';
-import Dashboard from './components/adminpanel/pages/Deshboard';
-import Invoice from './components/adminpanel/pages/Invoice';
+import ColorpickGame from './components/adminpanel/pages/ColorpickGame';
+import FundConverstion from './components/adminpanel/pages/FundConverstion';
 import ManageUsers from './components/adminpanel/pages/ManageUsers';
-import Managelottery from './components/adminpanel/pages/Managelottery';
-import ManangeGames from './components/adminpanel/pages/ManangeGames';
 import Profile from './components/adminpanel/pages/Profile';
 import Totalpayment from './components/adminpanel/pages/Totalpayment';
 import Wheelplay from './components/adminpanel/pages/Wheelplay';
@@ -48,24 +44,19 @@ const App = () => {
         <Route path='/termandcondition' element={<Termandconditions />} />
         <Route path='/gamerules' element={<GameRules />} />
         {/*protected Route for users  */}
-          <Route path='/admin' element={<ProtectedRouteForUser><FullLayout /></ProtectedRouteForUser>}>
-            <Route index element={<ProtectedRouteForUser><Dashboard /></ProtectedRouteForUser>} />
-            <Route path='dashboard' element={<ProtectedRouteForUser><Dashboard /></ProtectedRouteForUser>} />
-            <Route path='profile' element={<ProtectedRouteForUser><Profile /></ProtectedRouteForUser>} />
-            <Route path='changepassword' element={<ProtectedRouteForUser><Changepassword /></ProtectedRouteForUser>} />
-            <Route path='games' element={<ProtectedRouteForUser><AdminGames /></ProtectedRouteForUser>} />
-            <Route path='lottery' element={<ProtectedRouteForUser><AdminLottery /></ProtectedRouteForUser>} />
-            <Route path='wheelplay' element={<ProtectedRouteForUser><Wheelplay /></ProtectedRouteForUser>} />
-            <Route path='addpayment' element={<ProtectedRouteForUser><Addpyment /></ProtectedRouteForUser>} />
-            <Route path='invoice' element={<ProtectedRouteForAdmin><Invoice /></ProtectedRouteForAdmin>} />
-            <Route path='managelottery' element={<ProtectedRouteForAdmin><Managelottery /></ProtectedRouteForAdmin>} />
-            <Route path='createlottery' element={<ProtectedRouteForAdmin><Createlottery /></ProtectedRouteForAdmin>} />
-            <Route path='manageusers' element={<ProtectedRouteForAdmin><ManageUsers /></ProtectedRouteForAdmin>} />
-            <Route path='createusers' element={<ProtectedRouteForAdmin><Createuser /></ProtectedRouteForAdmin>} />
-            <Route path='managegames' element={<ProtectedRouteForAdmin><ManangeGames /></ProtectedRouteForAdmin>} />
-            <Route path='totalpayment' element={<ProtectedRouteForUser><Totalpayment /></ProtectedRouteForUser>} />
-            <Route path='withdrawpayment' element={<ProtectedRouteForUser><Withdraw /></ProtectedRouteForUser>} />
-          </Route>
+        <Route path='/admin' element={<ProtectedRouteForUser><FullLayout /></ProtectedRouteForUser>}>
+          <Route index path='games' element={<ProtectedRouteForUser><AdminGames /></ProtectedRouteForUser>} />
+          <Route path='profile' element={<ProtectedRouteForUser><Profile /></ProtectedRouteForUser>} />
+          <Route path='changepassword' element={<ProtectedRouteForUser><Changepassword /></ProtectedRouteForUser>} />
+          <Route path='lottery' element={<ProtectedRouteForUser><AdminLottery /></ProtectedRouteForUser>} />
+          <Route path='wheelplay' element={<ProtectedRouteForUser><Wheelplay /></ProtectedRouteForUser>} />
+          <Route path='addpayment' element={<ProtectedRouteForUser><Addpyment /></ProtectedRouteForUser>} />
+          <Route path='referrals' element={<ProtectedRouteForUser><ManageUsers /></ProtectedRouteForUser>} />
+          <Route path='totalpayment' element={<ProtectedRouteForUser><Totalpayment /></ProtectedRouteForUser>} />
+          <Route path='withdrawpayment' element={<ProtectedRouteForUser><Withdraw /></ProtectedRouteForUser>} />
+          <Route path='colourpick' element={<ProtectedRouteForUser><ColorpickGame /></ProtectedRouteForUser>} />
+          <Route path='fundconversion' element={<ProtectedRouteForUser><FundConverstion /></ProtectedRouteForUser>} />
+        </Route>
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </Router>
@@ -75,24 +66,12 @@ const App = () => {
 export default App
 
 // create protect route for user 
-export const ProtectedRouteForUser=({children})=>{
+export const ProtectedRouteForUser = ({ children }) => {
   const user = localStorage.getItem('user')
-      if(user){
-        return children
-      }
-      else{
-        return <Navigate to={'/login'}/>
-      }
-}
-
-// create protect route for super admin 
-
-export const ProtectedRouteForAdmin=({children})=>{
-  const user = JSON.parse(localStorage.getItem('user'))
-      if(user?.Email === 'mrx@gmail.com' && user?.MemberId === 'hpoTowNTzvNX8Y18dVcN/g=='){
-        return children
-      }
-      else{
-        return <Navigate to={'/login'}/>
-      }
+  if (user) {
+    return children
+  }
+  else {
+    return <Navigate to={'/login'} />
+  }
 }

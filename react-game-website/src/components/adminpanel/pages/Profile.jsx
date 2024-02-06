@@ -144,8 +144,6 @@ const Profile = () => {
             </Col>
           </Row>
         </Col>
-        {/*handle admin login if admin show block the this section */}
-        {userData.Email==='mrx@gmail.com' && userData.MemberId==='hpoTowNTzvNX8Y18dVcN/g==' ? '':(
           <Col className="order-xl-1" xl="8">
           <Row className="align-items-center">
             <Col>
@@ -190,7 +188,7 @@ const Profile = () => {
             </Col>
           </Row>
         </Col>
-        )}
+ 
       </Row>
     </Container>
   )

@@ -1,17 +1,39 @@
-import { Flex } from 'antd';
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import { Flex } from 'antd';
 
-const Totalpayment = () => {
+const FundConverstion = () => {
   return (
     <>
-      <Row className='align-item-center d-flex admin-broder-rbg2' >
+      <Row className='align-item-center d-flex admin-broder-rbg2'>
         <Flex justify='space-between'>
           <div>
-            <h4 className='pt-3 fw-bold color-white'>Wallet</h4>
+            <h1 className='text-center mt-4 color-white'>Funds Converter</h1>
+            <div className='mt-3 '>
+              <Row>
+                <Col className='pop-font' lg="6">
+                  <label for="amount">Enter Amount</label>
+                  <input type='number' required id='amount' placeholder='Enter Your Amount' />
+                </Col>
+                <Col className='pop-font' lg="6">
+                  <label for="camount">Confirm Amount</label>
+                  <input type='number' required id='camount' placeholder='Enter Your Confirm Amount' />
+                </Col>
+              </Row>
+
+              <Row className='mt-4 '>
+                <Col className='pop-font'>
+                  <button className='shadow-lg filter-btn w-100' >Convert Now</button>
+                </Col>
+              </Row>
+            </div>
           </div>
           <div className='rightSection'>
-            <span>Available Balance : ₹ 6531.00 </span>
+            <div className='mt-2'>
+              <span>Amount : ₹ 343.00 </span><br /><br />
+              <span>Date : 05/02/2024 </span><br /><br />
+              <span>Currency : INR </span>
+            </div>
           </div>
         </Flex>
       </Row>
@@ -19,17 +41,8 @@ const Totalpayment = () => {
         <div className="transaction-box">
           <div className="top-filter d-flex align-items-end">
             <div className="single-filter pop-font" >
-              <p>Month</p>
-              <input type="text" placeholder="2023/01" />
-            </div>
-            <div className="single-filter">
-              <p>Type</p>
-              <select className='nice-select pop-font color-white admin-table-borderradius' >
-                <option value="0" className='list'>All</option>
-                <option value="1" className='list'>Type 1</option>
-                <option value="2" className='list'>Type 2</option>
-                <option value="3" className='list'>Type 3</option>
-              </select>
+              <p>Transaction Id</p>
+              <input type="text" placeholder="34DFGDG65GFNFD" />
             </div>
             <div className="single-filter">
               <p >Currency</p>
@@ -40,6 +53,14 @@ const Totalpayment = () => {
                 <option value="3" className='list'>Currency 3</option>
               </select>
             </div>
+            <div className="single-filter">
+              <p>Amount</p>
+              <select className='nice-select pop-font color-white admin-table-borderradius' >
+                <option value="0" className='list'>All</option>
+                <option value="1" className='list'>High To Low</option>
+                <option value="2" className='list'>Low To High</option>
+              </select>
+            </div>
             <div>
               <button className="filter-btn">Filter</button>
             </div>
@@ -48,8 +69,8 @@ const Totalpayment = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th>Date/Time</th>
-                  <th>Type</th>
+                  <th>Transaction Id</th>
+                  <th>Date</th>
                   <th>Currency</th>
                   <th>Amount</th>
                 </tr>
@@ -57,86 +78,86 @@ const Totalpayment = () => {
               <tbody>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>DF4DFG7865GFNFD</p>
                   </th>
                   <td>
-                    <p>Deposit</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>78JFGDG65GFNFD</p>
                   </th>
                   <td>
-                    <p>Withdrawal</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>8JDFGDG65GFNFD</p>
                   </th>
                   <td>
-                    <p>Deposit</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>FGEFGDG65GFNFD</p>
                   </th>
                   <td>
-                    <p>Withdrawal</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>MJHDFGDG65GFNFD</p>
                   </th>
                   <td>
-                    <p>Referral</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">
-                    <p>2023-01-07  16-33-53</p>
+                    <p>34FGDDG65GFNFD</p>
                   </th>
                   <td>
-                    <p>Deposit</p>
+                    <p>05/02/2024</p>
                   </td>
                   <td>
-                    <p>BTC</p>
+                    <p>INR</p>
                   </td>
                   <td>
-                    <p>0.005210</p>
+                    <p>3435.00</p>
                   </td>
                 </tr>
               </tbody>
@@ -144,8 +165,9 @@ const Totalpayment = () => {
           </div>
         </div>
       </Row>
+     
     </>
   )
 }
 
-export default Totalpayment
+export default FundConverstion

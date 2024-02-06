@@ -1,0 +1,42 @@
+/* colour pick ui start */
+.counter-box-colourpick {
+    border-radius: 5px;
+    background-color: #3a2372;
+    padding: 6px;
+}
+
+.colourpick-game-ui-image {
+    border-radius: 10px;
+    height: 90px;
+    width: 180px;
+    margin: 0 5px;
+
+}
+
+.colourpick-game-latestwin-image {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+}
+
+.colorpick-betamount-decrease-button {
+    position: absolute;
+    top: auto;
+    right: 7px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a1758;
+    color: white;
+}
+.colorpick-betamount-increase-button {
+    position: absolute;
+    top: auto;
+    left: 7px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #2a1758;
+    color: white;
+}
+
+/* colour pick ui end */

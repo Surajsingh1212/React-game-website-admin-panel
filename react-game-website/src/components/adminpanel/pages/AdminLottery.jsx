@@ -1,8 +1,7 @@
-import React from 'react'
-import { useTime } from 'react-timer-hook';
-import { Link } from 'react-router-dom';
-import { Row } from 'react-bootstrap'
 import { Flex } from 'antd';
+import React from 'react';
+import { Row } from 'react-bootstrap';
+import { useTime } from 'react-timer-hook';
 
 const AdminLottery = () => {
   const {
@@ -27,9 +26,9 @@ const AdminLottery = () => {
           <div className='rightSection'>
             <span>Prize Pool : ₹ 3453453 </span>
             <div className='mt-2'>
-              <Link to="/signup" className="filter-btn link fw-bold">
+              <div className="filter-btn link fw-bold">
                 buy  Ticket for just ₹ 100
-              </Link>
+              </div>
             </div>
           </div>
         </Flex>

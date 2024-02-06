@@ -23,9 +23,7 @@ const Wheelplay = () => {
   const handleBetClick = () => {
     const spins = 10;
     let spinCount = 0;
-
     
-
     const wheel = document.getElementById('wheel');
     if (wheel) {
       wheel.classList.remove('spin-animation');
@@ -100,9 +98,7 @@ const Wheelplay = () => {
               </Col>
             </Row>
           </div>
-          <div className='col-md-1 col-xl-1 col-sm-1'>
-
-          </div>
+          <div className='col-md-1 col-xl-1 col-sm-1'></div>
           <div className='col-md-7 col-xl-7 col-sm-6' style={{ backgroundColor: '#3a2372', padding: '12px 30px', borderRadius: '10px' }}>
             <div className='d-flex justify-content-center align-items-center position-relative' style={{ height: '450px' }}>
               <div className='circle-arrow'><img src={arrow} alt='arrow' /></div>
@@ -113,7 +109,6 @@ const Wheelplay = () => {
                   </li>
                 ))}
               </ul>
-
             </div>
           </div>
         </div>
