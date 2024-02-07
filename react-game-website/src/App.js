@@ -26,6 +26,8 @@ import LotteryDetails from './components/pages/LotteryDetails';
 import Privacypolicy from './components/pages/Privacypolicy';
 import Signup from './components/pages/Signup';
 import Termandconditions from './components/pages/Termandconditions';
+import SlotMachine from './components/adminpanel/pages/SlotMachine';
+import Cardprediction from './components/adminpanel/pages/Cardprediction';
 
 const App = () => {
   return (
@@ -56,6 +58,8 @@ const App = () => {
           <Route path='withdrawpayment' element={<ProtectedRouteForUser><Withdraw /></ProtectedRouteForUser>} />
           <Route path='colourpick' element={<ProtectedRouteForUser><ColorpickGame /></ProtectedRouteForUser>} />
           <Route path='fundconversion' element={<ProtectedRouteForUser><FundConverstion /></ProtectedRouteForUser>} />
+          <Route path='slotmachine' element={<ProtectedRouteForUser><SlotMachine /></ProtectedRouteForUser>} />
+          <Route path='cardprediction' element={<ProtectedRouteForUser><Cardprediction /></ProtectedRouteForUser>} />
         </Route>
         <Route path="/*" element={<ErrorPage />} />
       </Routes>

@@ -216,7 +216,7 @@ const FullLayout = () => {
                 <div> <MdOutlineAccountBalanceWallet className=" align-item-center fs-2 p-2 admin-wallet-icons" /><span className='p-2 '>2331.00</span></div>
               </div>
               <div className='position-relative'>
-                <div><GiWallet className=" align-item-center fs-2 p-2 admin-wallet-icons" /><span className='p-2'>6531.00</span></div>
+                <div><GiWallet className=" align-item-center fs-2 p-2 admin-wallet-icons" /><span className='p-2 '>6531.00</span></div>
               </div>
 
               <div className="d-flex gap-3 align-item-center">

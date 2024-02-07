@@ -13,25 +13,16 @@ import winred from '../../../assets/images/colourpick/winred.png';
 import winvoilet from '../../../assets/images/colourpick/winvoilet.png';
 
 const ColorpickGame = () => {
-    const [result, setResult] = useState(null);
+    const [result, setResult] = useState(Math.floor(Math.random() * 10));
+    const [presviousResult, setPreviousResult] = useState([]);
     const [userBet, setUserBet] = useState('');
     const [userBalance, setUserBalance] = useState(100);
-    const [companyBalance, setCompanyBalance] = useState(1000);
     const [betAmount, setBetAmount] = useState(0);
     const [secondsLeft, setSecondsLeft] = useState(59);
     const [isGameRunning, setIsGameRunning] = useState(true);
-    const [hasPlacedBet, setHasPlacedBet] = useState(false);
-    const [numberOfBet, setNumberOfBet] = useState(0);
+    const [betPlace, setBetPlace] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // last six winner images 
-    const [lastSixWinners, setLastSixWinners] = useState([
-        winvoilet,
-        winblue,
-        winred,
-        winvoilet,
-        winblue,
-        winred,
-    ])
+
 
     useEffect(() => {
         // Set up an interval to call restartGame every 1 minute
@@ -63,32 +54,27 @@ const ColorpickGame = () => {
     const restartGame = () => {
         setSecondsLeft(59);
         setIsGameRunning(true);
+        setPreviousResult(result);
+        setBetPlace(false)
         setResult(null);
         setUserBet('');
         setBetAmount(0);
-        setHasPlacedBet(false); // Allow placing bet again in the new round
-        setNumberOfBet(0)
+        drawLotteryResult();
+
     };
 
     const drawLotteryResult = () => {
         const randomResult = Math.floor(Math.random() * 10);
         setResult(randomResult);
         //console.log(randomResult)
-        // last six winner 
-        setLastSixWinners(prevWinners => {
-            const newWinners = [...prevWinners]
-            newWinners.shift();
-            newWinners.push(getWinnerImg(userBet, randomResult));
-            return newWinners;
-        })
+      
     };
 
     //handle click
     const handleBet = () => {
-        if (!hasPlacedBet && secondsLeft > 0) {
-            // User can only place a bet once in the first 54 seconds
-            setHasPlacedBet(true);
+        if (!betPlace && secondsLeft > 6) {
 
+            drawLotteryResult();
             const isNumeric = /^[0-9]+$/.test(betAmount);
             const minBetAmount = 10;
 
@@ -111,9 +97,9 @@ const ColorpickGame = () => {
             }
 
             setUserBalance((prevBalance) => prevBalance - betAmount);
-            drawLotteryResult();
 
             const calculatedBetAmount = betAmount;
+
             let winnings = 0;
             switch (userBet) {
                 case 'BLUE':
@@ -145,17 +131,18 @@ const ColorpickGame = () => {
             }
 
             if (winnings > 0) {
-                setCompanyBalance((prevBalance) => prevBalance - winnings);
                 setUserBalance((prevBalance) => prevBalance + winnings);
-            } else {
-                setCompanyBalance((prevBalance) => prevBalance + calculatedBetAmount);
-            }
+            }else {
+                setUserBalance((prevBalance) => prevBalance - calculatedBetAmount);
+            }  
             setBetAmount(0);
             Swal.fire({
                 icon: winnings > 0 ? 'success' : 'error',
                 title: winnings > 0 ? 'Congratulations!' : 'Better luck next time!',
                 text: winnings > 0 ? `You won ${winnings} rupees.` : `You lost ${calculatedBetAmount} rupees.`,
             });
+            setPreviousResult(result)
+            setBetPlace(true)
         } else {
             Swal.fire({
                 icon: 'warning',
@@ -164,56 +151,16 @@ const ColorpickGame = () => {
             });
         }
     };
-    // last six winner get image 
-    const getWinnerImg = (userBet, result) => {
-        let winnerImg = null;
-        switch (userBet) {
-            case 'BLUE':
-                if ([1, 3, 7, 9].includes(result)) {
-                    winnerImg = winblue;
-                }
-                else if (result === 5) {
-                    winnerImg = winblue;
-                }
-                break;
-            case 'RED':
-                if ([2, 4, 6, 8].includes(result)) {
-                    winnerImg = winred;
-                }
-                else if (result === 0) {
-                    winnerImg = winred;
-                }
-                break;
-            case 'VIOLET':
-                if ([0, 5].includes(result)) {
-                    winnerImg = winvoilet;
-                }
-                break;
-            default:
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Invalid Bet Selection',
-                    text: 'Please select a valid color to bet on.',
-                });
-                break;
-        }
-        return winnerImg;
-    }
+    
     const increaseBetAmount = () => {
         setBetAmount((prevAmount) => prevAmount + 10);
-        updateNumberOfBet();
     };
 
     const decreaseBetAmount = () => {
         if (betAmount >= 10) {
             setBetAmount((prevAmount) => prevAmount - 10);
-            updateNumberOfBet();
         }
     };
-    const updateNumberOfBet = () => {
-        const numberOfBet = Math.floor(betAmount / 10);
-        setNumberOfBet(numberOfBet)
-    }
     // hanle rules modal
     const showModal = () => {
         setIsModalOpen(true);
@@ -259,7 +206,7 @@ const ColorpickGame = () => {
                         <Row>
                             <Col>
                                 <label htmlFor="nbet">Number of Bet</label>
-                                <input type='number' readOnly id='nbet' value={numberOfBet} />
+                                <input type='number' readOnly id='nbet' value={betAmount / 10} />
                             </Col>
                         </Row>
                         <Row>
@@ -274,12 +221,12 @@ const ColorpickGame = () => {
                             </Col>
                         </Row>
                         {/*Bet Button Section */}
-                        <Row className='mt-4 '>
+                        <Row className='mt-4 align-item-center '>
                             <Col>
                                 <button className='shadow-lg filter-btn w-100' onClick={handleBet} disabled={secondsLeft <= 6 || !isGameRunning}>Bet </button>
                             </Col>
                             <Col>
-                                {secondsLeft === 0 && !isGameRunning && <button onClick={restartGame}>Restart Game</button>}
+                                {secondsLeft === 0 && !isGameRunning && <button onClick={restartGame} className='filter-btn'>Restart Game</button>}
                             </Col>
                         </Row>
                         {/*showing a rules span */}
@@ -356,8 +303,7 @@ const ColorpickGame = () => {
                                 </table>
                             </div>
                         </Modal>
-                        <p>Current result:  {result}</p>
-                        <p>Company Balance:  {companyBalance}</p>
+                        <p className='text-center'>Current result:  {presviousResult !== null && secondsLeft <= 6 ? presviousResult : `Result...${secondsLeft - 6}`}</p>
                     </div>
                     <div className='col-md-1 col-xl-1 col-sm-1'></div>
                     <div className='col-md-7 col-xl-7 col-sm-6' style={{ backgroundColor: '#3a2372', padding: '12px 30px', borderRadius: '10px' }}>
@@ -413,11 +359,11 @@ const ColorpickGame = () => {
                         <Row className='pt-3'>
                             <div className='d-flex align-item-center justify-content-center'>
                                 <div className='d-flex'>
-                                    {lastSixWinners.map((winner, index) => (
-                                        <div key={index}>
-                                            <img src={winner} alt={`winner-${index}`} className='colourpick-game-latestwin-image' />
-                                        </div>
-                                    ))}
+                                <img src={winvoilet} alt='colouricons' className='colourpick-game-latestwin-image' />
+                                <img src={winblue} alt='colouricons' className='colourpick-game-latestwin-image' />
+                                <img src={winred} alt='colouricons' className='colourpick-game-latestwin-image' />
+                                <img src={winvoilet} alt='colouricons' className='colourpick-game-latestwin-image' />
+                                <img src={winred} alt='colouricons' className='colourpick-game-latestwin-image' />
                                 </div>
                                 <div>
                                     <img src={waiting} alt='colouricons' className='colourpick-game-latestwin-image' />
