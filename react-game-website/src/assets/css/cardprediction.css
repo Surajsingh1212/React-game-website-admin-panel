@@ -1,12 +1,18 @@
-.card-game-img {
-    border-radius: 10px;
-    height: 200px;
-    width: 135px;
-    margin: 0 5px;
-}
+
 .card-game-img2 {
-    border-radius: 10px;
+    border-radius: 5px;
     height: 120px;
-    width: 85px;
-    margin: 0 5px;
+    width: 106px;
+    margin: 0 5px ;
+    margin-bottom: 10px;
+}
+.card-game-img{
+    border-radius: 10px;
+    height: 60px;
+    width: 45px;
+    margin: 0 5px ;
+}
+.card-game-winner-bg{
+    background-color: #2a1758;
+    border-radius: 10px;
 }

@@ -25,13 +25,13 @@ const AdminGames = () => {
             </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
-          <Link to='/admin/cardprediction'>
-            <div className='d-flex align-item-center justify-content-center'>
-              <img src={Card} alt="#" className='show-game-all-section-img' />
-              <div className=' d-flex align-item-center justify-content-center position-absolute mt-5 '>
-                <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+            <Link to='/admin/cardprediction'>
+              <div className='d-flex align-item-center justify-content-center'>
+                <img src={Card} alt="#" className='show-game-all-section-img' />
+                <div className=' d-flex align-item-center justify-content-center position-absolute mt-5 '>
+                  <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+                </div>
               </div>
-            </div>
             </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
@@ -57,20 +57,24 @@ const AdminGames = () => {
         </div>
         <div className='row text-center mt-3'>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
-            <div className='d-flex align-item-center justify-content-center'>
-              <img src={aviator} alt="#" className='show-game-all-section-img' />
-              <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
-                <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+            <Link to='/admin/aviator'>
+              <div className='d-flex align-item-center justify-content-center'>
+                <img src={aviator} alt="#" className='show-game-all-section-img' />
+                <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
+                  <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
-            <div className='d-flex align-item-center justify-content-center'>
-              <img src={dice} alt="#" className='show-game-all-section-img' />
-              <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
-                <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+            <Link to='/admin/dice'>
+              <div className='d-flex align-item-center justify-content-center'>
+                <img src={dice} alt="#" className='show-game-all-section-img' />
+                <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
+                  <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
             <div className='d-flex align-item-center justify-content-center'>

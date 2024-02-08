@@ -28,6 +28,8 @@ import Signup from './components/pages/Signup';
 import Termandconditions from './components/pages/Termandconditions';
 import SlotMachine from './components/adminpanel/pages/SlotMachine';
 import Cardprediction from './components/adminpanel/pages/Cardprediction';
+import DiceGame from './components/adminpanel/pages/DiceGame';
+import AviatorGame from './components/adminpanel/pages/AviatorGame';
 
 const App = () => {
   return (
@@ -60,6 +62,8 @@ const App = () => {
           <Route path='fundconversion' element={<ProtectedRouteForUser><FundConverstion /></ProtectedRouteForUser>} />
           <Route path='slotmachine' element={<ProtectedRouteForUser><SlotMachine /></ProtectedRouteForUser>} />
           <Route path='cardprediction' element={<ProtectedRouteForUser><Cardprediction /></ProtectedRouteForUser>} />
+          <Route path='dice' element={<ProtectedRouteForUser><DiceGame /></ProtectedRouteForUser>} />
+          <Route path='aviator' element={<ProtectedRouteForUser><AviatorGame /></ProtectedRouteForUser>} />
         </Route>
         <Route path="/*" element={<ErrorPage />} />
       </Routes>

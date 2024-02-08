@@ -30,40 +30,40 @@
 
 
 .circle li:first-child .text{
-  background-color: violet;
+  background-color: #ee82ee;
 }
 .circle li:nth-child(2) .text{
-  background-color: green;
+  background-color: #008000;
 }
 .circle li:nth-child(3) .text{
-  background-color: orange;
+  background-color: #ffa500;
 }
 .circle li:nth-child(4) .text{
-  background-color: greenyellow;
+  background-color: #adff2f;
 }
 .circle li:nth-child(5) .text{
-  background-color: pink;
+  background-color: #ffc0cb;
 }
 .circle li:nth-child(6) .text{
-  background-color: blueviolet;
+  background-color: #8a2be2;
 }
 .circle li:nth-child(7) .text{
-  background-color: mediumseagreen;
+  background-color: #3cb371;
 }
 .circle li:nth-child(8) .text{
-  background-color: mediumslateblue;
+  background-color: #7b68ee;
 }
 .circle li:nth-child(9) .text{
-  background-color: lightcoral;
+  background-color: #f08080;
 }
 .circle li:nth-child(10) .text{
-  background-color: sandybrown;
+  background-color: #f4a460;
 }
 .circle li:nth-child(11) .text{
-  background-color: greenyellow;
+  background-color: #adff2f;
 }
 .circle li:nth-child(12) .text{
-  background-color: yellow;
+  background-color: #ffff00;
 }
 .circle li:first-child{
   transform: rotate(0deg) skewY(-60deg);
@@ -136,7 +136,7 @@
   font-family: poppins;
   font-weight: bold;
 }
-.circle-arrow{
+.circle-arrow1{
   position: absolute;
   left: 21%;
   top: 12%;
@@ -155,4 +155,46 @@
 .spin-animation{
   animation: spin 5s linear; /*dureation for spin */
   animation-fill-mode: forwards;
+}
+
+
+/*new spin using charts data */
+
+.circle2{
+  height: 350px; 
+  width: 350px;
+  border: 15px solid #f3f4f7;
+  position: relative;
+  overflow: hidden;
+  transition: 5s;
+  border-radius: 50%;
+  padding: 0;
+}
+.circle-arrow{
+  position: absolute;
+  left:0px;
+  top: 15px;
+  z-index: 1;
+}
+canvas {
+  max-width: 100%;
+  height: auto;
+  transform: rotate(-150deg);
+}
+
+#text {
+  margin-top: 20px;
+}
+
+#spin_btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+  canvas {
+    width: 100%;
+  }
 }
