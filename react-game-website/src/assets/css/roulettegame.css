@@ -1,0 +1,31 @@
+.circle-roulete{
+    height: 350px; 
+    width: 350px;
+    border: 15px solid #f5ad11;
+    position: relative;
+    overflow: hidden;
+    transition: 5s;
+    border-radius: 50%;
+    padding: 0;
+  }
+  .canva-roulete {
+    max-width: 100%;
+    height: auto; 
+  }
+  
+  #text {
+    margin-top: 20px;
+  }
+  
+  #spin_btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  /* Media Query for smaller screens */
+  @media only screen and (max-width: 600px) {
+    canvas {
+      width: 100%;
+    }
+  }

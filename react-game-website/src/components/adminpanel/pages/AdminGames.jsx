@@ -6,6 +6,7 @@ import aviator from '../../../assets/images/aviator.png';
 import casino from '../../../assets/images/7-casino.png';
 import dice from '../../../assets/images/dice.png';
 import routtel from '../../../assets/images/routtel.png';
+import anderBahar from '../../../assets/images/ander-bahar1.png';
 import { FaPlay } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -77,20 +78,24 @@ const AdminGames = () => {
             </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
-            <div className='d-flex align-item-center justify-content-center'>
-              <img src={routtel} alt="#" className='show-game-all-section-img' />
-              <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
-                <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+            <Link to='/admin/rouletewheel'>
+              <div className='d-flex align-item-center justify-content-center'>
+                <img src={routtel} alt="#" className='show-game-all-section-img' />
+                <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
+                  <FaPlay className='p-3 mt-3 admin-game-play-section-icon' />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className='col-md-3 col-xl-3 col-sm-6 mb-2'>
-            <div className='d-flex align-item-center justify-content-center'>
-              <img src={spinwheel} alt="#" className='show-game-all-section-img' />
-              <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
-                <FaPlay className='p-3 mt-3  admin-game-play-section-icon' />
+            <Link to='/admin/andarbahar'>
+              <div className='d-flex align-item-center justify-content-center'>
+                <img src={anderBahar} alt="#" className='show-game-all-section-img' />
+                <div className='d-flex align-item-center justify-content-center position-absolute mt-5 '>
+                  <FaPlay className='p-3 mt-3  admin-game-play-section-icon' />
+                </div>
               </div>
-            </div>
+            </Link> 
           </div>
         </div>
       </div>

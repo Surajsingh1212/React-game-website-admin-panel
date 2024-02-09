@@ -27,137 +27,6 @@
     margin-bottom: 4px;
     padding: 0;
   }
-
-
-.circle li:first-child .text{
-  background-color: #ee82ee;
-}
-.circle li:nth-child(2) .text{
-  background-color: #008000;
-}
-.circle li:nth-child(3) .text{
-  background-color: #ffa500;
-}
-.circle li:nth-child(4) .text{
-  background-color: #adff2f;
-}
-.circle li:nth-child(5) .text{
-  background-color: #ffc0cb;
-}
-.circle li:nth-child(6) .text{
-  background-color: #8a2be2;
-}
-.circle li:nth-child(7) .text{
-  background-color: #3cb371;
-}
-.circle li:nth-child(8) .text{
-  background-color: #7b68ee;
-}
-.circle li:nth-child(9) .text{
-  background-color: #f08080;
-}
-.circle li:nth-child(10) .text{
-  background-color: #f4a460;
-}
-.circle li:nth-child(11) .text{
-  background-color: #adff2f;
-}
-.circle li:nth-child(12) .text{
-  background-color: #ffff00;
-}
-.circle li:first-child{
-  transform: rotate(0deg) skewY(-60deg);
-}
-.circle li:nth-child(2){
-  transform: rotate(30deg) skewY(-60deg);
-}
-.circle li:nth-child(3){
-  transform: rotate(60deg) skewY(-60deg);
-}
-.circle li:nth-child(4){
-  transform: rotate(90deg) skewY(-60deg);
-}
-.circle li:nth-child(5){
-  transform: rotate(120deg) skewY(-60deg);
-}
-.circle li:nth-child(6){
-  transform: rotate(150deg) skewY(-60deg);
-}
-.circle li:nth-child(7){
-  transform: rotate(180deg) skewY(-60deg);
-}
-.circle li:nth-child(8){
-  transform: rotate(210deg) skewY(-60deg);
-}
-.circle li:nth-child(9){
-  transform: rotate(240deg) skewY(-60deg);
-}
-.circle li:nth-child(10){
-  transform: rotate(270deg) skewY(-60deg);
-}
-.circle li:nth-child(11){
-  transform: rotate(300deg) skewY(-60deg);
-}
-.circle li:nth-child(12){
-  transform: rotate(330deg) skewY(-60deg);
-}
-.circle{
-  height: 350px; 
-  width: 350px;
-  border: 15px solid #f3f4f7;
-  position: relative;
-  overflow: hidden;
-  transition: 5s;
-  border-radius: 50%;
-  padding: 0;
-  list-style: none;
-}
-.circle li{
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 50%;
-  transform-origin: 0% 100%;
-}
-.circle li .text{
-  position: absolute;
-  left: -100%;
-  width: 200%;
-  height: 200%;
-  align-items: center;
-  text-align: center;
-  display: block;
-  transform: skewY(60deg) rotate(15deg);
-  padding-top: 10px;
-  color: black;
-  cursor: pointer;
-  font-family: poppins;
-  font-weight: bold;
-}
-.circle-arrow1{
-  position: absolute;
-  left: 21%;
-  top: 12%;
-  z-index: 1;
-}
-
-@keyframes spin{
-  0%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(3600deg); /* Rotate 10 times */
-  }
-}
-
-.spin-animation{
-  animation: spin 5s linear; /*dureation for spin */
-  animation-fill-mode: forwards;
-}
-
-
 /*new spin using charts data */
 
 .circle2{
@@ -176,7 +45,7 @@
   top: 15px;
   z-index: 1;
 }
-canvas {
+.canva-wheelspin {
   max-width: 100%;
   height: auto;
   transform: rotate(-150deg);

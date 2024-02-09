@@ -136,7 +136,7 @@ const Wheelplay = () => {
           font: { size: 24 },
         },
       },
-     
+
     };
 
     spinWheelChart = new Chart(spinWheelRef.current, {
@@ -234,68 +234,47 @@ const Wheelplay = () => {
             </div>
 
             {/*showing a rules content */}
-            <Modal title="About Colour Pick Game" width={600} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
+            <Modal title="About Spin Wheel Game" width={600} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
               <p>1 minutes 1 issue,54 seconds to order,6 seconds to show the lottery result. It opens all day. The total number of trade is 1440 issues. </p>
               <p>If you spend 100 rupees to trade,after deducting 2 rupees service fee,your contract amount is 98 rupees:</p>
-              <p><b>JOIN BLUE :</b>  if the result shows 1,3,7,9,you will get (98*2) 196 rupees;If the result shows 5,you will get (98*1.5) 147 rupees.</p>
-              <p><b>JOIN RED :</b>  if the result shows 2,4,6,8,you will get (98*2) 196 rupees;If the result shows 0,you will get (98*1.5) 147 rupees.</p>
-              <p><b>JOIN VIOLET :</b>  if the result shows 0 or 5,you will get (98*4.5) 441 rupees.</p>
+              <p><b>JOIN ANY COLOR :</b> If you join any colour and your colour is win so you win and get amount 2x of your bet amount.</p>
               <div className="table-responsive">
                 <table className="table">
                   <thead>
                     <tr>
                       <th>Select </th>
-                      <th>Result</th>
                       <th>Multiplier</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">
-                        <p>Join Blue</p>
+                        <p>Blue</p>
+                        <p>Red</p>
+                        <p>Orange</p>
+                        <p>Black</p>
+                        <p>White</p>
+                        <p>Coral</p>
+                        <p>Yellow</p>
+                        <p>Brown</p>
+                        <p>Green</p>
+                        <p>Violet</p>
+                        <p>Cyan</p>
+                        <p>Purple</p>
                       </th>
                       <td>
-                        <p>1,3,7,9</p>
-                        <p>5</p>
-                      </td>
-                      <td>
-                        <p>2</p>
-                        <p>1.5</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <p>Join Red</p>
-                      </th>
-                      <td>
-                        <p>2,4,6,8</p>
-                        <p>0</p>
-                      </td>
-                      <td>
-                        <p>2</p>
-                        <p>1.5</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <p>Join Violet</p>
-                      </th>
-                      <td>
-                        <p>0,5</p>
-                      </td>
-                      <td>
-                        <p>4.5</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <p>Number</p>
-                      </th>
-                      <td>
-                        <p>n</p>
-                      </td>
-                      <td>
-                        <p>9</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
+                        <p>2X</p>
                       </td>
                     </tr>
                   </tbody>
@@ -307,12 +286,12 @@ const Wheelplay = () => {
           <div className='col-md-7 col-xl-7 col-sm-6' style={{ backgroundColor: '#3a2372', padding: '12px 30px', borderRadius: '10px' }}>
             <div className='align-item-center text-center ' >
               <div className='d-flex justify-content-center align-item-center mt-5'>
-              <div className='position-relative'>
-              <div className='circle2'>
-                  <canvas id="spinWheel" ref={spinWheelRef}></canvas>
+                <div className='position-relative'>
+                  <div className='circle2'>
+                    <canvas id="spinWheel" ref={spinWheelRef} className='canva-wheelspin'></canvas>
+                  </div>
+                  <img src={arrow} alt='arrowImg' className='circle-arrow' />
                 </div>
-                <img src={arrow} alt='arrowImg' className='circle-arrow'/>
-              </div>
               </div>
               <div id="text">{text}</div>
             </div>

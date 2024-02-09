@@ -30,6 +30,8 @@ import SlotMachine from './components/adminpanel/pages/SlotMachine';
 import Cardprediction from './components/adminpanel/pages/Cardprediction';
 import DiceGame from './components/adminpanel/pages/DiceGame';
 import AviatorGame from './components/adminpanel/pages/AviatorGame';
+import RoulettewheelGame from './components/adminpanel/pages/RoulettewheelGame';
+import AndarBahar from './components/adminpanel/pages/AndarBahar';
 
 const App = () => {
   return (
@@ -64,6 +66,8 @@ const App = () => {
           <Route path='cardprediction' element={<ProtectedRouteForUser><Cardprediction /></ProtectedRouteForUser>} />
           <Route path='dice' element={<ProtectedRouteForUser><DiceGame /></ProtectedRouteForUser>} />
           <Route path='aviator' element={<ProtectedRouteForUser><AviatorGame /></ProtectedRouteForUser>} />
+          <Route path='rouletewheel' element={<ProtectedRouteForUser><RoulettewheelGame /></ProtectedRouteForUser>} />
+          <Route path='andarbahar' element={<ProtectedRouteForUser><AndarBahar /></ProtectedRouteForUser>} />
         </Route>
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
