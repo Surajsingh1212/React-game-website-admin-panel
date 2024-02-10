@@ -6,7 +6,7 @@ import { IoEye } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axiosInstance from '../../api';
-import {FadeLoader} from 'react-spinners'
+import { FadeLoader } from 'react-spinners'
 
 const Login = () => {
   // handle show password 
@@ -108,6 +108,11 @@ const Login = () => {
   }
   return (
     <div className='main'>
+      {loading && (
+        <div className="loader-container">
+          <FadeLoader color="#a1ff00" />
+        </div>
+      )}
       <div className='box12 p-5'>
         <div className="form-area">
           <form>
@@ -140,12 +145,11 @@ const Login = () => {
               </label>
               <p><Link to='#' className='link color-white'>Forget Password</Link></p>
             </div>
-           
+
             <div className="btn-area text-center">
-           {/* {loading &&( <div className="loader"><FadeLoader color="#2fbc08" /></div>)}*/} 
-                <div className="cmn-btn mt-4 link" onClick={handleSubmit}>Login
-                 <FaArrowRightLong className='ms-2' />
-                </div>
+              <div className="cmn-btn mt-4 link" onClick={handleSubmit}>Login
+                <FaArrowRightLong className='ms-2' />
+              </div>
             </div>
           </form>
         </div>

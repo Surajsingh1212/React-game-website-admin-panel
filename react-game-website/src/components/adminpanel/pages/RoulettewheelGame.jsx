@@ -1,5 +1,5 @@
 import { Flex, Modal } from 'antd';
-import React, { useState,useRef,useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FaMinus, FaPlus } from "react-icons/fa";
 import '../../../assets/css/roulettegame.css';
@@ -62,31 +62,31 @@ const RoulettewheelGame = () => {
       { minDegree: 81, maxDegree: 90, value: 9 },
       { minDegree: 91, maxDegree: 100, value: 10 },
       { minDegree: 101, maxDegree: 110, value: 11 },
-      { minDegree: 111, maxDegree: 120, value: 12},
-      { minDegree: 121, maxDegree: 130, value: 13},
-      { minDegree: 131, maxDegree: 140, value: 14},
-      { minDegree: 141, maxDegree: 150, value: 15},
-      { minDegree: 151, maxDegree: 160, value: 16},
-      { minDegree: 161, maxDegree: 170, value: 17},
+      { minDegree: 111, maxDegree: 120, value: 12 },
+      { minDegree: 121, maxDegree: 130, value: 13 },
+      { minDegree: 131, maxDegree: 140, value: 14 },
+      { minDegree: 141, maxDegree: 150, value: 15 },
+      { minDegree: 151, maxDegree: 160, value: 16 },
+      { minDegree: 161, maxDegree: 170, value: 17 },
       { minDegree: 171, maxDegree: 180, value: 18 },
-      { minDegree: 181, maxDegree: 190, value: 19},
-      { minDegree: 191, maxDegree: 200, value: 20},
-      { minDegree: 201, maxDegree: 210, value: 21},
-      { minDegree: 211, maxDegree: 220, value: 22},
-      { minDegree: 221, maxDegree: 230, value: 23},
-      { minDegree: 231, maxDegree: 240, value: 24},
-      { minDegree: 241, maxDegree: 250, value: 25},
-      { minDegree: 251, maxDegree: 260, value: 26},
-      { minDegree: 261, maxDegree: 270, value: 27},
-      { minDegree: 271, maxDegree: 280, value: 28},
-      { minDegree: 281, maxDegree: 290, value: 29},
-      { minDegree: 291, maxDegree: 300, value: 30},
-      { minDegree: 301, maxDegree: 310, value: 31},
-      { minDegree: 311, maxDegree: 320, value: 32},
-      { minDegree: 321, maxDegree: 330, value: 33},
-      { minDegree: 331, maxDegree: 340, value: 34},
-      { minDegree: 341, maxDegree: 350, value: 35},
-      { minDegree: 351, maxDegree: 360, value: 36},
+      { minDegree: 181, maxDegree: 190, value: 19 },
+      { minDegree: 191, maxDegree: 200, value: 20 },
+      { minDegree: 201, maxDegree: 210, value: 21 },
+      { minDegree: 211, maxDegree: 220, value: 22 },
+      { minDegree: 221, maxDegree: 230, value: 23 },
+      { minDegree: 231, maxDegree: 240, value: 24 },
+      { minDegree: 241, maxDegree: 250, value: 25 },
+      { minDegree: 251, maxDegree: 260, value: 26 },
+      { minDegree: 261, maxDegree: 270, value: 27 },
+      { minDegree: 271, maxDegree: 280, value: 28 },
+      { minDegree: 281, maxDegree: 290, value: 29 },
+      { minDegree: 291, maxDegree: 300, value: 30 },
+      { minDegree: 301, maxDegree: 310, value: 31 },
+      { minDegree: 311, maxDegree: 320, value: 32 },
+      { minDegree: 321, maxDegree: 330, value: 33 },
+      { minDegree: 331, maxDegree: 340, value: 34 },
+      { minDegree: 341, maxDegree: 350, value: 35 },
+      { minDegree: 351, maxDegree: 360, value: 36 },
     ];
 
     for (let i of spinValues) {
@@ -126,71 +126,71 @@ const RoulettewheelGame = () => {
       { minDegree: 81, maxDegree: 90, value: 9 },
       { minDegree: 91, maxDegree: 100, value: 10 },
       { minDegree: 101, maxDegree: 110, value: 11 },
-      { minDegree: 111, maxDegree: 120, value: 12},
-      { minDegree: 121, maxDegree: 130, value: 13},
-      { minDegree: 131, maxDegree: 140, value: 14},
-      { minDegree: 141, maxDegree: 150, value: 15},
-      { minDegree: 151, maxDegree: 160, value: 16},
-      { minDegree: 161, maxDegree: 170, value: 17},
+      { minDegree: 111, maxDegree: 120, value: 12 },
+      { minDegree: 121, maxDegree: 130, value: 13 },
+      { minDegree: 131, maxDegree: 140, value: 14 },
+      { minDegree: 141, maxDegree: 150, value: 15 },
+      { minDegree: 151, maxDegree: 160, value: 16 },
+      { minDegree: 161, maxDegree: 170, value: 17 },
       { minDegree: 171, maxDegree: 180, value: 18 },
-      { minDegree: 181, maxDegree: 190, value: 19},
-      { minDegree: 191, maxDegree: 200, value: 20},
-      { minDegree: 201, maxDegree: 210, value: 21},
-      { minDegree: 211, maxDegree: 220, value: 22},
-      { minDegree: 221, maxDegree: 230, value: 23},
-      { minDegree: 231, maxDegree: 240, value: 24},
-      { minDegree: 241, maxDegree: 250, value: 25},
-      { minDegree: 251, maxDegree: 260, value: 26},
-      { minDegree: 261, maxDegree: 270, value: 27},
-      { minDegree: 271, maxDegree: 280, value: 28},
-      { minDegree: 281, maxDegree: 290, value: 29},
-      { minDegree: 291, maxDegree: 300, value: 30},
-      { minDegree: 301, maxDegree: 310, value: 31},
-      { minDegree: 311, maxDegree: 320, value: 32},
-      { minDegree: 321, maxDegree: 330, value: 33},
-      { minDegree: 331, maxDegree: 340, value: 34},
-      { minDegree: 341, maxDegree: 350, value: 35},
-      { minDegree: 351, maxDegree: 360, value: 36},
+      { minDegree: 181, maxDegree: 190, value: 19 },
+      { minDegree: 191, maxDegree: 200, value: 20 },
+      { minDegree: 201, maxDegree: 210, value: 21 },
+      { minDegree: 211, maxDegree: 220, value: 22 },
+      { minDegree: 221, maxDegree: 230, value: 23 },
+      { minDegree: 231, maxDegree: 240, value: 24 },
+      { minDegree: 241, maxDegree: 250, value: 25 },
+      { minDegree: 251, maxDegree: 260, value: 26 },
+      { minDegree: 261, maxDegree: 270, value: 27 },
+      { minDegree: 271, maxDegree: 280, value: 28 },
+      { minDegree: 281, maxDegree: 290, value: 29 },
+      { minDegree: 291, maxDegree: 300, value: 30 },
+      { minDegree: 301, maxDegree: 310, value: 31 },
+      { minDegree: 311, maxDegree: 320, value: 32 },
+      { minDegree: 321, maxDegree: 330, value: 33 },
+      { minDegree: 331, maxDegree: 340, value: 34 },
+      { minDegree: 341, maxDegree: 350, value: 35 },
+      { minDegree: 351, maxDegree: 360, value: 36 },
     ];
 
     const size = Array(spinValues.length).fill(10);
 
     const spinColors = [
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
-      "#404040",
+      "#182120",
       "#b50000",
     ];
 
@@ -201,13 +201,9 @@ const RoulettewheelGame = () => {
         tooltip: false,
         legend: { display: false },
         datalabels: {
-          rotation: 90,
-          color: 'black',
-          formatter: (_, context) => context.chart.data.labels[context.dataIndex],
-          font: { size: 24 },
+          display: false,
         },
       },
-
     };
 
     spinWheelChart = new Chart(spinWheelRef.current, {
@@ -300,13 +296,16 @@ const RoulettewheelGame = () => {
           {/*Bet Button Section */}
           <Row className='mt-4 align-item-center '>
             <Col>
-              <button className='shadow-lg filter-btn w-100'  id="spin_btn" disabled={disabled} onClick={clickHandler}>Bet </button>
+              <button className='shadow-lg filter-btn w-100' id="spin_btn" disabled={disabled} onClick={clickHandler}>Bet </button>
             </Col>
 
           </Row>
           {/*showing a rules span */}
           <div className='row text-center'>
             <span onClick={showModal} className='admin-game-rules mt-2'>Game Rules</span>
+          </div>
+          <div className='row text-center'>
+          <div id="text">{text}</div>
           </div>
 
           {/*showing a rules content */}
@@ -356,17 +355,34 @@ const RoulettewheelGame = () => {
         </div>
         <div className='col-md-1 col-xl-1 col-sm-1'></div>
         <div className='col-md-7 col-xl-7 col-sm-6' style={{ backgroundColor: '#3a2372', padding: '12px 30px', borderRadius: '10px' }}>
-        <div className='align-item-center text-center ' >
-        <div className='d-flex justify-content-center align-item-center mt-5'>
-          <div className='position-relative'>
-            <div className='circle-roulete'>
-              <canvas id="spinWheel" ref={spinWheelRef} className='canva-roulete'></canvas>
+          <div className='align-item-center text-center ' >
+            <div className='d-flex justify-content-center align-item-center mt-5'>
+              <div className='position-relative'>
+                <div className='circle-roulete'>
+                  <canvas id="spinWheel" ref={spinWheelRef} className='canva-roulete'></canvas>
+                  <div className='second-roulete'><div className='d-flex ju'></div></div>
+                  <div className='third-roulete'></div>
+                </div>
+                
+              </div>
+              
             </div>
-         
+            <div className='d-flex align-item-center justify-content-between'>
+              <div className='text-center color-white mt-4 ms-2 pop-font game-roulete-bg'>
+                <div className='d-flex align-item-center text-center'>
+                  <div className='counter-box-colourpick p-2'>0</div>&nbsp;
+                  <div className='counter-box-colourpick p-2'>0</div>&nbsp; <span> : </span> &nbsp;
+                  <div className='counter-box-colourpick p-2'>0</div>&nbsp;
+                  <div className='counter-box-colourpick p-2'>0</div>
+                </div>
+              </div>
+              <div className='text-center color-white mt-4 ms-2 pop-font game-roulete-bg'>
+              <div className='d-flex align-item-center text-center'>
+                <span>Multiplier : 4X</span>
+              </div>
+            </div>
+            </div>
           </div>
-        </div>
-        <div id="text">{text}</div>
-      </div>
         </div>
       </div>
     </div>

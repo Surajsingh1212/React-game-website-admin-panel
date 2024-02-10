@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { Flex, Modal } from 'antd';
 import { FaMinus, FaPlus } from "react-icons/fa";
+import '../../../assets/css/andarbahar.css';
 import andar from '../../../assets/images/andarbahar/ander.png';
 import bahar from '../../../assets/images/andarbahar/bahar.png';
 import anderbaharwin from '../../../assets/images/andarbahar/anderbaharwin.png';
+import card1 from '../../../assets/images/andarbahar/cards1.png';
+import card2 from '../../../assets/images/andarbahar/cards2.png';
+import cardback from '../../../assets/images/andarbahar/cardsback.png';
 
 const AndarBahar = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [betAmount, setBetAmount] = useState(0);
+    const [isFlipped, setIsFlipped] = useState(false);
 
     // handle increament and decreament
     const increaseBetAmount = () => {
@@ -29,6 +34,10 @@ const AndarBahar = () => {
     };
     const handleCancel = () => {
         setIsModalOpen(false);
+    };
+
+    const flipCard = () => {
+        setIsFlipped(!isFlipped);
     };
     return (
         <div className='Container'>
@@ -162,10 +171,41 @@ const AndarBahar = () => {
                             </div>
                         </Col>
                     </Row>
-                    <div className='row'>
-                    
+                    <div>
+                        <div className='d-flex align-item-center justify-cotent-between'>
+                            <div className={`andarbahar-card-container ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
+                                <div className="andarbahar-card">
+                                    <div className="front">
+                                        <img src={cardback} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                    <div className="back">
+                                        <img src={card1} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`andarbahar-card-container ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
+                                <div className="andarbahar-card">
+                                    <div className="front">
+                                        <img src={card2} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                    <div className="back">
+                                        <img src={cardback} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`andarbahar-card-container ${isFlipped ? 'flipped' : ''}`} onClick={flipCard}>
+                                <div className="andarbahar-card">
+                                    <div className="front">
+                                        <img src={cardback} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                    <div className="back">
+                                        <img src={card2} alt="anadarbahar-img" className='andar-bahar-img' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className='row mt-2'>
+                    <div className='row'>
                         <div>
                             <h3 className='color-white'>Winners</h3>
                         </div>

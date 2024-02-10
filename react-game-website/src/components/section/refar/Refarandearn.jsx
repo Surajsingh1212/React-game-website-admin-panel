@@ -26,7 +26,7 @@ const Refarandearn = () => {
                                     <p>When you successfully join Mrx Partners, you will automatically receive an amazing 10% to 20% Revenue Share based on the number of New Depositing Customers you send our way.</p>
                                 </div>
                                 <div className="btn-area">
-                                    <Link to="/signup" className="cmn-btn reg link" data-bs-toggle="modal" data-bs-target="#loginMod">
+                                    <Link to="/signup" className="cmn-btn reg link">
                                         Join Now
                                         <FaArrowRightLong className='ms-2' />
                                     </Link>
