@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { FaMinus, FaPlus } from "react-icons/fa";
+import Confettiwin from '../others/Confettiwin';
 import '../../../assets/css/colourpickgame.css';
 import voilet from '../../../assets/images/colourpick/Violet.png';
 import blue from '../../../assets/images/colourpick/blue.png';
@@ -22,6 +23,7 @@ const ColorpickGame = () => {
     const [isGameRunning, setIsGameRunning] = useState(true);
     const [betPlace, setBetPlace] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showConfetti,setShowConfetti] = useState(false)
 
 
     useEffect(() => {
@@ -30,6 +32,7 @@ const ColorpickGame = () => {
             restartGame();
         }, 60000);
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -51,6 +54,14 @@ const ColorpickGame = () => {
         return () => clearInterval(timer);
     }, [secondsLeft, isGameRunning]);
 
+    useEffect(()=>{
+        if(showConfetti){
+            const timeout = setTimeout(()=>{
+                setShowConfetti(false)
+            },3000);
+            return ()=> clearTimeout(timeout)
+        }
+    },[showConfetti])
     const restartGame = () => {
         setSecondsLeft(59);
         setIsGameRunning(true);
@@ -132,6 +143,7 @@ const ColorpickGame = () => {
 
             if (winnings > 0) {
                 setUserBalance((prevBalance) => prevBalance + winnings);
+                setShowConfetti(true);
             }else {
                 setUserBalance((prevBalance) => prevBalance - calculatedBetAmount);
             }  
@@ -373,6 +385,7 @@ const ColorpickGame = () => {
                     </div>
                 </div>
             </div>
+            {showConfetti && <Confettiwin />}
         </>
     )
 }

@@ -90,6 +90,7 @@ const Signup = () => {
       })
       
       if (response.data && response.data.StatusCode === 1) {
+        setLoading(false);
         Swal.fire({
           icon: 'success',
           title: 'Signup Successful!',
@@ -100,7 +101,7 @@ const Signup = () => {
           if (result.isConfirmed) {
             Navigate('/login')
           }
-          setLoading(false);
+          
         })
 
       }
@@ -134,13 +135,14 @@ const Signup = () => {
   return (
     <div className='container my-5'>
       <div className='row'>
+       
+        <div className='col-md-3'></div>
+        <div className='col-md-6'>
         {loading && (
           <div className="loader-container">
             <FadeLoader color="#a1ff00" />
           </div>
         )}
-        <div className='col-md-3'></div>
-        <div className='col-md-6'>
           <div className='box12 p-5'>
             <div className="form-area">
               <form>
@@ -219,7 +221,6 @@ const Signup = () => {
         <div className='col-md-3'></div>
       </div>
     </div>
-
   )
 }
 

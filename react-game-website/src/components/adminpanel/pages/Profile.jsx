@@ -3,11 +3,13 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import axiosInstance from '../../../api';
 import ProfileAvatar from '../../../assets/images/table-image-5.png';
+import { FadeLoader } from 'react-spinners'
 
 const Profile = () => {
   // get data from localstorage 
   const userData = JSON.parse(localStorage.getItem('user'))
-
+  // for loading 
+  const [loading,setLoading] = useState(false)
   // Handle Form Validation 
   const [validateError, setValidateError] = useState({
     Name: '', Email: '', Mobile: ''
@@ -62,6 +64,7 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
     if (!formData.Name || !formData.Email || !formData.Mobile) {
       Swal.fire({
         title: 'Validation Error',
@@ -69,6 +72,7 @@ const Profile = () => {
         icon: 'error',
         confirmButtonColor: '#35bf08',
       });
+      setLoading(false)
       return;
     }
     try {
@@ -79,6 +83,7 @@ const Profile = () => {
         Mobile: formData.Mobile
       })
       if (UpdateProfile.data && UpdateProfile.data.status === 'Success') {
+        setLoading(false)
         Swal.fire({
           icon: 'success',
           title: ' Update Successful!',
@@ -103,6 +108,7 @@ const Profile = () => {
           text: UpdateProfile.data.statusText,
           confirmButtonColor: '#35bf08',
         })
+        setLoading(false)
       }
       setFormData({ Name: '', Email: '', Mobile: '' })
     }
@@ -113,6 +119,7 @@ const Profile = () => {
         text: 'There was an internal server error. Please try again later.',
         confirmButtonColor: '#35bf08',
       })
+      setLoading(false);
     }
   }
   return (
@@ -145,6 +152,11 @@ const Profile = () => {
           </Row>
         </Col>
           <Col className="order-xl-1" xl="8">
+          {loading && (
+            <div className="loader-container">
+              <FadeLoader color="#a1ff00" />
+            </div>
+          )}
           <Row className="align-items-center">
             <Col>
               <h3 className="mb-0 color-white">My account</h3>
@@ -157,24 +169,24 @@ const Profile = () => {
             <div className="pl-lg-4">
               <Row>
                 <Col lg="6" className='pop-font'>
-                  <label for="input-username"> Full Name</label>
+                  <label htmlFor="input-username"> Full Name</label>
                   <input type='text' required id='input-username' placeholder='Enter Name' name='Name' value={formData.Name} onChange={handleInputChange} />
                  {validateError.Name && <span className='color-red'>{validateError.Name}</span>}
                   </Col>
                 <Col lg="6" className='pop-font'>
-                  <label for="email">Email address</label>
+                  <label htmlFor="email">Email address</label>
                   <input type='email' required id='email' placeholder='Enter email' name='Email' value={formData.Email} onChange={handleInputChange} />
                   {validateError.Email && <span className='color-red'>{validateError.Email}</span>}
                   </Col>
               </Row>
               <Row>
                 <Col lg="6" className='pop-font'>
-                  <label for="mobile">Mobile</label>
+                  <label htmlFor="mobile">Mobile</label>
                   <input type='text' required id='mobile' placeholder='Enter mobile' name='Mobile' value={formData.Mobile} onChange={handleInputChange} />
                   {validateError.Mobile && <span className='color-red'>{validateError.Mobile}</span>}
                   </Col>
                 <Col lg="6" className='pop-font'>
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input type="password" autoComplete='current-password' readOnly id='oldpassword' placeholder='For Password Go To Change Password' />
                 </Col>
               </Row>
